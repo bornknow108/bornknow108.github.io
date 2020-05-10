@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>FacebookファンページのStatic FBMLでFBJS (Facebook JavaScript)を使ってみた。 | 骨折り損のくたびれ儲け</title>
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="最近、Facebookが国内でもちょくちょく話題に出てきているみたいなので、いろいろと調べたした結果をメモとして残しておきます。（どっかの誰かが流行らそうとしている陰謀かもしれないですが）Facebookのファンページ Facebookページで、タブのカスタマイズによく使われているのは・Static FBML アプリケーションを使う・独自にアプリケーションを構築するの２パターンだと思います。 ファ">
+<meta property="og:type" content="article">
+<meta property="og:title" content="FacebookファンページのStatic FBMLでFBJS (Facebook JavaScript)を使ってみた。">
+<meta property="og:url" content="http://bornknow.com/2010/10/static-fbmlfbjs-facebook-javascript.html">
+<meta property="og:site_name" content="骨折り損のくたびれ儲け">
+<meta property="og:description" content="最近、Facebookが国内でもちょくちょく話題に出てきているみたいなので、いろいろと調べたした結果をメモとして残しておきます。（どっかの誰かが流行らそうとしている陰謀かもしれないですが）Facebookのファンページ Facebookページで、タブのカスタマイズによく使われているのは・Static FBML アプリケーションを使う・独自にアプリケーションを構築するの２パターンだと思います。 ファ">
+<meta property="og:locale" content="ja_JP">
+<meta property="article:published_time" content="2010-10-20T00:00:00.007Z">
+<meta property="article:modified_time" content="2020-05-10T09:41:21.246Z">
+<meta property="article:author" content="bornknow108">
+<meta property="article:tag" content="Facebook, FBML, FBJS,">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator" content="@bornknow108">
+<link rel="publisher" href="bornknow108">
+<meta property="fb:app_id" content="1441275542864270">
+  
+    <link rel="alternative" href="/atom.xml" title="骨折り損のくたびれ儲け" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-6062369-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+<body>
+  <div id="container">
+    <div class="mobile-nav-panel">
+	<i class="icon-reorder icon-large"></i>
+</div>
+<header id="header">
+	<div class="clearfix">
+		<h1 class="blog-title">
+			<a href="/">骨折り損のくたびれ儲け</a>
+		</h1>
+		<nav class="nav">
+			<ul>
+				<li><a href="/">Home</a></li><li><a href="/archives">Archives</a></li>
+				<li><a id="nav-search-btn" class="nav-icon" title="Search"></a></li>
+				<li><a href="/atom.xml" id="nav-rss-link" class="nav-icon" title="RSS Feed"></a></li>
+			</ul>
+		</nav>
+		<div id="search-form-wrap">
+			<form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://bornknow.com"></form>
+		</div>
+	</div>
+</header>
+
+    <div id="main">
+      <article id="post-static-fbmlfbjs-facebook-javascript" class="post">
+	<footer class="entry-meta-header">
+		<span class="meta-elements date">
+			<a href="/2010/10/static-fbmlfbjs-facebook-javascript.html" class="article-date">
+  <time datetime="2010-10-20T00:00:00.007Z" itemprop="datePublished">2010-10-20</time>
+</a>
+		</span>
+		<span class="meta-elements author">bornknow108</span>
+		<div class="commentscount">
+			
+		</div>
+	</footer>
+	
+	<header class="entry-header">
+		
+			
+  
+    <h1 class="article-title entry-title" itemprop="name">
+      FacebookファンページのStatic FBMLでFBJS (Facebook JavaScript)を使ってみた。
+    </h1>
+  
+
+		
+		<ul class="sns-share--area">
+		  <li>
+			<a href="http://b.hatena.ne.jp/entry/http://bornknow.com/2010/10/static-fbmlfbjs-facebook-javascript.html"
+			  class="hatena-bookmark-button sns-share--bookmark sns-share--link"
+			  data-hatena-bookmark-title="FacebookファンページのStatic FBMLでFBJS (Facebook JavaScript)を使ってみた。"
+			  data-hatena-bookmark-layout="simple"
+			  title="このエントリーをはてなブックマークに追加">
+			  <i class="fa fa-bookmark fa-lg"></i></a>
+		  </li>
+		  <li>
+			<a class="sns-share--twitter sns-share--link"
+			  href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fbornknow.com%2F2010%2F10%2Fstatic-fbmlfbjs-facebook-javascript.html&text=FacebookファンページのStatic FBMLでFBJS (Facebook JavaScript)を使ってみた。" target="_blank">
+			  <i class="fa fa-twitter fa-lg" ></i></a>
+		  </li>
+		  <li>
+			<a class="sns-share--facebook sns-share--link"
+			  href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fbornknow.com%2F2010%2F10%2Fstatic-fbmlfbjs-facebook-javascript.html"
+			  onclick="window.open(this.href, 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;"
+			  target="_blank">
+			  <i class="fa fa-facebook fa-lg" ></i></a>
+		  </li>
+		  <li>
+			<a class="sns-share--pocket sns-share--link"
+			  href="http://getpocket.com/edit?url=http%3A%2F%2Fbornknow.com%2F2010%2F10%2Fstatic-fbmlfbjs-facebook-javascript.html&title=FacebookファンページのStatic FBMLでFBJS (Facebook JavaScript)を使ってみた。"
+			  onclick="window.open(this.href, 'pocket_window', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;">
+			  <i class="fa fa-chevron-down fa-lg"></i></a>
+		  </li>
+		</ul>
+	</header>
+	<div class="entry-content">
+		
+    	<p>最近、Facebookが国内でもちょくちょく話題に出てきているみたいなので、いろいろと調べたした結果をメモとして残しておきます。（どっかの誰かが流行らそうとしている陰謀かもしれないですが）<br><s>Facebookのファンページ </s>Facebookページで、タブのカスタマイズによく使われているのは<br>・Static FBML アプリケーションを使う<br>・独自にアプリケーションを構築する<br>の２パターンだと思います。 <s>ファンページ </s>Facebookページっていうのは、芸能人とか、企業とかのコミュニティ用のサイトみたいな感じです。 掲示板とか、動画とか、イベントとか、独自のアプリケーションとか、いろんな機能を <s>ファン</s>ページのタブとしてくっつけることが出来ます。<br>(このへんは、あんまり真面目に調べてないので大きく間違っているかもしれません。)<br>で、Static FBML とよばれるアプリケーションを使ってタブを作成すると、 <a href="http://developers.facebook.com/docs/reference/fbml/" target="_blank" rel="noopener">FBML(FaceBook Markup Language) </a>と <a href="http://developers.facebook.com/docs/fbjs" target="_blank" rel="noopener">FBJS (FaceBook JavaScript)</a>を使って かなりカスタマイズしたページを作ることが可能になります。<br>ただ、PHPとか使ったページを作りたい場合は、独自にアプリケーションを構築する必要があります。<br>アプリケーションの作り方とかは、ググってください。<br>[2010.10.26追記] <a href="http://blogs.itmedia.co.jp/naoto/2010/10/facebookfaceboo.html" target="_blank" rel="noopener">【Facebook】Facebookアプリがわからなすぎるので調べてみた</a>が分かりやすかったです。<br>FBMLは、Facebook内で使える独自のタグです。<br>FBJSは、Facebook内で使えるJavascriptのサブセット？です。<br>FBJSで出来ることのうち、ひとまず動かした結果を貼っつけておきます。<br>(随時、追記・修正するので貼っつけたままだと動かない可能性があります。)<br> <a id="more"></a></p>
+<p>##FBSJは、scriptタグで囲んだ中に記述する。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line"> &lt;!--</span><br><span class="line"></span><br><span class="line"> &#x2F;&#x2F;--&gt;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>##クリックしたら、フォントサイズと色を変更する場合</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line"> &lt;!--</span><br><span class="line">  function change_color_size() &#123;</span><br><span class="line">   var sample &#x3D; document.getElementById(&#39;sample1&#39;);</span><br><span class="line"></span><br><span class="line">   sample.setStyle(&#39;color&#39;, &#39;#FF0000&#39;);</span><br><span class="line">   sample.setStyle(&#39;font-size&#39;, &#39;40px&#39;);</span><br><span class="line"></span><br><span class="line">   &#x2F;&#x2F; まとめて指定する場合は、こっちでもOK</span><br><span class="line">   &#x2F;&#x2F; sample.setStyle(&#123;&#39;color&#39;:&#39;#FF0000&#39;, &#39;font-size&#39;:&#39;40px&#39;&#125;);</span><br><span class="line">  &#125;</span><br><span class="line"> &#x2F;&#x2F;--&gt;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line"> &lt;div id&#x3D;&quot;sample1&quot; onclick&#x3D;&quot;change_color_size()&quot;&gt;</span><br><span class="line">テキスト</span><br></pre></td></tr></table></figure>
+
+
+<p>##マウスオーバーで表示を書き換える場合</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line"> &lt;!--</span><br><span class="line"> function mouse_over(evt) &#123;</span><br><span class="line">  var id &#x3D; evt.target.getId(); &#x2F;&#x2F; target.getId()で対象のIDを取得できる</span><br><span class="line">  document.getElementById(id).setStyle(&#123;&#39;color&#39;:&#39;#FF0000&#39;, &#39;font-size&#39;:&#39;40px&#39;&#125;);</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> function mouse_out(evt) &#123;</span><br><span class="line">  var id &#x3D; evt.target.getId();</span><br><span class="line">  document.getElementById(id).setStyle(&#123;&#39;color&#39;:&#39;#000000&#39;, &#39;font-size&#39;:&#39;10px&#39;&#125;);</span><br><span class="line"> &#125;</span><br><span class="line"> &#x2F;&#x2F;--&gt;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line"> &lt;div id&#x3D;&quot;sample&quot; onmouseout&#x3D;&quot;mouse_out(event)&quot; onmouseover&#x3D;&quot;mouse_over(event)&quot;&gt;</span><br><span class="line">テキスト</span><br></pre></td></tr></table></figure>
+
+
+<p>##イベントリスナーを使って、指定する場合</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line"> &lt;!--</span><br><span class="line"> function mouse_over(evt) &#123;</span><br><span class="line">  var id &#x3D; evt.target.getId();</span><br><span class="line">  document.getElementById(id).setStyle(&#123;&#39;color&#39;:&#39;#FF0000&#39;, &#39;font-size&#39;:&#39;40px&#39;&#125;);</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> function mouse_out(evt) &#123;</span><br><span class="line">  var id &#x3D; evt.target.getId();</span><br><span class="line">  document.getElementById(id).setStyle(&#123;&#39;color&#39;:&#39;#000000&#39;, &#39;font-size&#39;:&#39;10px&#39;&#125;);</span><br><span class="line"> &#125;</span><br><span class="line"> &#x2F;&#x2F; イベントリスナーの定義</span><br><span class="line"> document.getElementById(&#39;sample&#39;).addEventListener(&#39;mouseover&#39;, mouse_over);</span><br><span class="line"> document.getElementById(&#39;sample&#39;).addEventListener(&#39;mouseout&#39;, mouse_out);</span><br><span class="line"></span><br><span class="line"> &#x2F;&#x2F; メソッドチェーンも出来ます</span><br><span class="line"> &#x2F;&#x2F; document.getElementById(&#39;sample&#39;).addEventListener(&#39;mouseover&#39;, mouse_over).addEventListener(&#39;mouseout&#39;, mouse_out).setStyle(&#39;color&#39;, &#39;#00FF00&#39;);</span><br><span class="line"> &#x2F;&#x2F;--&gt;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line"> &lt;div id&#x3D;&quot;sample&quot;&gt;</span><br><span class="line">テキスト</span><br></pre></td></tr></table></figure>
+
+
+<p>##スタイルの変更にアニメーションを適用する場合</p>
+<p>アニメーションの作り方は、ここの<a href="http://weavora.com/blog/2010/09/16/fbjs-animation-basics/" target="_blank" rel="noopener">サイト</a>を参考にしました。<br>ざっくり自分でも<a href="http://born-clap.blogspot.com/2010/11/fbjs-animation.html" target="_blank" rel="noopener">まとめてみました。</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line"> &lt;!--</span><br><span class="line">  function change_anime() &#123;</span><br><span class="line">   Animation(this)</span><br><span class="line">    .to(&#39;color&#39;, &#39;#0000FF&#39;)   &#x2F;&#x2F; 色変えます</span><br><span class="line">    .to(&#39;font-size&#39;, &#39;60px&#39;)  &#x2F;&#x2F; サイズ変えます</span><br><span class="line">    .duration(1000)     &#x2F;&#x2F; １秒かけて</span><br><span class="line">    .ease(Animation.ease.end)  </span><br><span class="line">   .checkpoint()      &#x2F;&#x2F; ここまでワンセット</span><br><span class="line">    .to(&#39;font-size&#39;, &#39;10px&#39;)</span><br><span class="line">    .duration(2000)</span><br><span class="line">    .ease(Animation.ease.end)</span><br><span class="line">   .go();</span><br><span class="line">  &#125;</span><br><span class="line"> &#x2F;&#x2F;--&gt;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line"> &lt;div onclick&#x3D;&quot;change_anime()&quot;&gt;</span><br><span class="line">aaaaaaaaaaaaaa</span><br></pre></td></tr></table></figure>
+
+<p>##ダイアログを表示する</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line"> &lt;!--</span><br><span class="line">  function choice_dialog(obj) &#123;</span><br><span class="line">   var dialog &#x3D; new Dialog(Dialog.DIALOG_CONTEXTUAL).setContext(obj);</span><br><span class="line">   &#x2F;&#x2F; click left button</span><br><span class="line">   dialog.onconfirm &#x3D; function() &#123;</span><br><span class="line">    obj.setTextValue(&#39;Leftをクリックしました&#39;);</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   &#x2F;&#x2F; click right button</span><br><span class="line">   dialog.oncancel &#x3D; function() &#123;</span><br><span class="line">    obj.setTextValue(&#39;Rightをクリックしました&#39;);</span><br><span class="line">   &#125;</span><br><span class="line">   dialog.showChoice(&#39;Title&#39;, &#39;Left Or Right&#39;, &#39;Left&#39;, &#39;Right&#39;)</span><br><span class="line">  &#125;</span><br><span class="line"> &#x2F;&#x2F;--&gt;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line"> &lt;div onclick&#x3D;&quot;choice_dialog(this);&quot;&gt;</span><br><span class="line">選択</span><br></pre></td></tr></table></figure>
+
+<p>##AJAXについて</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line"> &lt;!--</span><br><span class="line"> function load() &#123;</span><br><span class="line">  var ajax &#x3D; new Ajax();</span><br><span class="line"></span><br><span class="line">  &#x2F;&#x2F; Ajax.JSON, Ajax.FBML, Ajax.RAW の中からセット</span><br><span class="line">  ajax.responseType &#x3D; Ajax.FBML;</span><br><span class="line"></span><br><span class="line">  &#x2F;&#x2F; ajax実行結果をどうするかを設定</span><br><span class="line">  ajax.ondone &#x3D; function(data) &#123;</span><br><span class="line">   docuent.getElementById(&#39;result&#39;).setInnerFBML(data);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  &#x2F;&#x2F; Ajaxの実行にログインが必要かどうかを設定</span><br><span class="line">  ajax.requireLogin &#x3D; false;</span><br><span class="line"></span><br><span class="line">  ajax.onerror &#x3D; function() &#123;</span><br><span class="line">   &#x2F;&#x2F; Ajaxエラー時の処理を記述する</span><br><span class="line">  &#125;</span><br><span class="line">  params &#x3D; new Object();</span><br><span class="line">  params[&#39;field1&#39;] &#x3D; &#39;sample1&#39;;</span><br><span class="line">  params[&#39;field2&#39;] &#x3D; &#39;sample2&#39;;</span><br><span class="line"></span><br><span class="line">  &#x2F;&#x2F; これきっかけで実行される</span><br><span class="line">  ajax.post(&#39;http:&#x2F;&#x2F;example.com&#x2F;&#39;, params);</span><br><span class="line"> &#125;</span><br><span class="line"> &#x2F;&#x2F;--&gt;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line"> &lt;div onclick&#x3D;&quot;load();&quot;&gt;</span><br><span class="line">読み込み</span><br><span class="line">&lt;div id&#x3D;&quot;result&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+<p>##とりあえず、注意する点</p>
+<ul>
+<li>onclickで指定したJavaScriptはクリックすれば動く</li>
+<li>addEventListenerとか、onclick以外で指定したJavascriptは、onclickで何かしらのJavaScriptを実行しないと動かない。</li>
+</ul>
+
+    
+	</div>
+	<footer class="entry-footer">
+		
+			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<!-- article -->
+			<ins class="adsbygoogle"
+			     style="display:block"
+			     data-ad-client="ca-pub-2875874165633260"
+			     data-ad-slot="8347318920"
+			     data-ad-format="auto"></ins>
+			<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+		
+		<div class="entry-meta-footer">
+			<span class="category">
+				
+			</span>
+			<span class="tags">
+				
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Facebook-FBML-FBJS/" rel="tag">Facebook, FBML, FBJS,</a></li></ul>
+
+			</span>
+		</div>
+	</footer>
+	
+    
+<nav id="article-nav">
+  
+    <a href="/2010/10/bloggerlike.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          BloggerにLikeボタンを設置する方法
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2010/10/doophporm.html" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">
+        
+          DooPHPのORMについてのメモ
+        
+      </div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+    </div>
+    <div class="mb-search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="Search">
+    <input type="hidden" name="q" value="site:bornknow.com">
+  </form>
+</div>
+<footer id="footer">
+	<h1 class="footer-blog-title">
+		<a href="/">骨折り損のくたびれ儲け</a>
+	</h1>
+	<span class="copyright">
+		&copy; 2020 bornknow108<br>
+		Modify from <a href="http://sanographix.github.io/tumblr/apollo/" target="_blank">Apollo</a> theme, designed by <a href="http://www.sanographix.net/" target="_blank">SANOGRAPHIX.NET</a><br>
+		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+	</span>
+</footer>
+
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

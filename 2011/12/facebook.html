@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Facebookでそれっぽいダイアログを出す方法 | 骨折り損のくたびれ儲け</title>
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="Facebookアプリを作っていて、Facebookと同じようなダイアログを出す方法を調べたので、メモっておく。 ちなみに、Facebookと同じようなダイアログっていうのは半透明の角丸の枠が付いてる、下のようなやつです。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Facebookでそれっぽいダイアログを出す方法">
+<meta property="og:url" content="http://bornknow.com/2011/12/facebook.html">
+<meta property="og:site_name" content="骨折り損のくたびれ儲け">
+<meta property="og:description" content="Facebookアプリを作っていて、Facebookと同じようなダイアログを出す方法を調べたので、メモっておく。 ちなみに、Facebookと同じようなダイアログっていうのは半透明の角丸の枠が付いてる、下のようなやつです。">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="http://2.bp.blogspot.com/-xQSVYffzU1o/Ttc1KBTEAPI/AAAAAAAAAJw/1leN39i_6ko/s320/FBDialog.png">
+<meta property="article:published_time" content="2011-12-01T01:30:00.000Z">
+<meta property="article:modified_time" content="2020-05-10T09:41:21.235Z">
+<meta property="article:author" content="bornknow108">
+<meta property="article:tag" content="JavaScript, Facebook,">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://2.bp.blogspot.com/-xQSVYffzU1o/Ttc1KBTEAPI/AAAAAAAAAJw/1leN39i_6ko/s320/FBDialog.png">
+<meta name="twitter:creator" content="@bornknow108">
+<link rel="publisher" href="bornknow108">
+<meta property="fb:app_id" content="1441275542864270">
+  
+    <link rel="alternative" href="/atom.xml" title="骨折り損のくたびれ儲け" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-6062369-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+<body>
+  <div id="container">
+    <div class="mobile-nav-panel">
+	<i class="icon-reorder icon-large"></i>
+</div>
+<header id="header">
+	<div class="clearfix">
+		<h1 class="blog-title">
+			<a href="/">骨折り損のくたびれ儲け</a>
+		</h1>
+		<nav class="nav">
+			<ul>
+				<li><a href="/">Home</a></li><li><a href="/archives">Archives</a></li>
+				<li><a id="nav-search-btn" class="nav-icon" title="Search"></a></li>
+				<li><a href="/atom.xml" id="nav-rss-link" class="nav-icon" title="RSS Feed"></a></li>
+			</ul>
+		</nav>
+		<div id="search-form-wrap">
+			<form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://bornknow.com"></form>
+		</div>
+	</div>
+</header>
+
+    <div id="main">
+      <article id="post-facebook" class="post">
+	<footer class="entry-meta-header">
+		<span class="meta-elements date">
+			<a href="/2011/12/facebook.html" class="article-date">
+  <time datetime="2011-12-01T01:30:00.000Z" itemprop="datePublished">2011-12-01</time>
+</a>
+		</span>
+		<span class="meta-elements author">bornknow108</span>
+		<div class="commentscount">
+			
+		</div>
+	</footer>
+	
+	<header class="entry-header">
+		
+			
+  
+    <h1 class="article-title entry-title" itemprop="name">
+      Facebookでそれっぽいダイアログを出す方法
+    </h1>
+  
+
+		
+		<ul class="sns-share--area">
+		  <li>
+			<a href="http://b.hatena.ne.jp/entry/http://bornknow.com/2011/12/facebook.html"
+			  class="hatena-bookmark-button sns-share--bookmark sns-share--link"
+			  data-hatena-bookmark-title="Facebookでそれっぽいダイアログを出す方法"
+			  data-hatena-bookmark-layout="simple"
+			  title="このエントリーをはてなブックマークに追加">
+			  <i class="fa fa-bookmark fa-lg"></i></a>
+		  </li>
+		  <li>
+			<a class="sns-share--twitter sns-share--link"
+			  href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fbornknow.com%2F2011%2F12%2Ffacebook.html&text=Facebookでそれっぽいダイアログを出す方法" target="_blank">
+			  <i class="fa fa-twitter fa-lg" ></i></a>
+		  </li>
+		  <li>
+			<a class="sns-share--facebook sns-share--link"
+			  href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fbornknow.com%2F2011%2F12%2Ffacebook.html"
+			  onclick="window.open(this.href, 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;"
+			  target="_blank">
+			  <i class="fa fa-facebook fa-lg" ></i></a>
+		  </li>
+		  <li>
+			<a class="sns-share--pocket sns-share--link"
+			  href="http://getpocket.com/edit?url=http%3A%2F%2Fbornknow.com%2F2011%2F12%2Ffacebook.html&title=Facebookでそれっぽいダイアログを出す方法"
+			  onclick="window.open(this.href, 'pocket_window', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;">
+			  <i class="fa fa-chevron-down fa-lg"></i></a>
+		  </li>
+		</ul>
+	</header>
+	<div class="entry-content">
+		
+    	<p>Facebookアプリを作っていて、Facebookと同じようなダイアログを出す方法を調べたので、メモっておく。</p>
+<p>ちなみに、Facebookと同じようなダイアログっていうのは半透明の角丸の枠が付いてる、下のようなやつです。<br> <a href="http://2.bp.blogspot.com/-xQSVYffzU1o/Ttc1KBTEAPI/AAAAAAAAAJw/1leN39i_6ko/s1600/FBDialog.png" target="_blank" rel="noopener" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="143" src="http://2.bp.blogspot.com/-xQSVYffzU1o/Ttc1KBTEAPI/AAAAAAAAAJw/1leN39i_6ko/s320/FBDialog.png" width="320" /></a></p>
+<a id="more"></a>
+
+<p>ダイアログの作り方はいたって簡単で、FB.Dialog.createを呼び出すだけです。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id&#x3D;&quot;fb-root&quot;&gt;</span><br><span class="line">&lt;script charset&#x3D;&quot;utf-8&quot; type&#x3D;&quot;text&#x2F;javascript&quot;</span><br><span class="line">  src&#x3D;&quot;http:&#x2F;&#x2F;connect.facebook.net&#x2F;ja_JP&#x2F;all.js&quot; &gt;&lt;&#x2F;script&gt;</span><br><span class="line">&lt;script type&#x3D;&quot;text&#x2F;javascript&quot;&gt;</span><br><span class="line"> FB.init(&#123;</span><br><span class="line">   apiKey : 285434861495310</span><br><span class="line">  ,  status : true</span><br><span class="line">  ,  cookie : true</span><br><span class="line">  ,  xfbml  : true&#125;);</span><br><span class="line"></span><br><span class="line"> function showDialog() &#123;</span><br><span class="line"> var content &#x3D; &#39;&#39;</span><br><span class="line">  + &#39;&lt;div style&#x3D;&quot;color:#FFFFFF;</span><br><span class="line">      background-color:#3b5998;</span><br><span class="line">      font-size: 15px;</span><br><span class="line">      font-weight: bold;</span><br><span class="line">      padding: 5px;</span><br><span class="line">      text-align: left;&quot;&gt;&#39;</span><br><span class="line">  + &#39;ここにタイトルがはいります&#39;</span><br><span class="line">  + &#39; &#39;</span><br><span class="line">  + &#39;&lt;p style&#x3D;&quot;height:100px;</span><br><span class="line">      margin:10px;&quot;&gt;&#39;</span><br><span class="line">  + &#39;ここにテキストがはいります。&#39;</span><br><span class="line">  + &#39;&lt;&#x2F;p&gt;&#39;</span><br><span class="line">  + &#39;&lt;div style&#x3D;&quot;color:#000000;</span><br><span class="line">      background-color:#f7f7f7;</span><br><span class="line">      padding: 8px;</span><br><span class="line">      text-align: right;</span><br><span class="line">      border-top: 1px solid #cccccc;</span><br><span class="line">      height:23px;&quot;&gt;&#39;</span><br><span class="line">  + &#39;&lt;input type&#x3D;&quot;button&quot; value&#x3D;&quot;閉じる&quot;</span><br><span class="line">      onclick&#x3D;&quot;FB.Dialog.remove(this);&quot;&#x2F;&gt;&#39;</span><br><span class="line">  + &#39; &#39;</span><br><span class="line"></span><br><span class="line"> var dialog &#x3D; FB.Dialog.create(&#123;</span><br><span class="line">  content  : content</span><br><span class="line"> , closeIcon : false</span><br><span class="line"> , visible  : true</span><br><span class="line">&#x2F;&#x2F; , onClose  : function()&#123;FB.Dialog.remove(this);&#125;</span><br><span class="line"> &#125;);</span><br><span class="line"> dialog.style.width &#x3D; &#39;450px&#39;;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line">[Sample](#)</span><br></pre></td></tr></table></figure>
+
+<p>content には、ダイアログ内のhtmlソースを設定します。<br>closeIcon は左上にペケポンを出すかどうかの設定です。<br>onClose は closeIconをクリックしたときの処理です。</p>
+<p>ダイアログを消すときは、「FB.Dialog.remove(FB.Dialog._active);」や「FB.Dialog.remove(this);」を使って消します。<br>FB.Dialog.create に関しては、公開されているAPIではないので急に使えなくなるかもしれないです。<br>（オフィシャルなAPIも仕様変更で使えなくなったりするので、あまり変わらない気もします。）</p>
+
+    
+	</div>
+	<footer class="entry-footer">
+		
+			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<!-- article -->
+			<ins class="adsbygoogle"
+			     style="display:block"
+			     data-ad-client="ca-pub-2875874165633260"
+			     data-ad-slot="8347318920"
+			     data-ad-format="auto"></ins>
+			<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+		
+		<div class="entry-meta-footer">
+			<span class="category">
+				
+			</span>
+			<span class="tags">
+				
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript-Facebook/" rel="tag">JavaScript, Facebook,</a></li></ul>
+
+			</span>
+		</div>
+	</footer>
+	
+    
+<nav id="article-nav">
+  
+    <a href="/2011/12/xperia-arc-carier-iq.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Xperia Arc でCarier IQのチェックをしてみた
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2011/10/mime.html" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">
+        
+          MIMEタイプ一覧
+        
+      </div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+    </div>
+    <div class="mb-search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="Search">
+    <input type="hidden" name="q" value="site:bornknow.com">
+  </form>
+</div>
+<footer id="footer">
+	<h1 class="footer-blog-title">
+		<a href="/">骨折り損のくたびれ儲け</a>
+	</h1>
+	<span class="copyright">
+		&copy; 2020 bornknow108<br>
+		Modify from <a href="http://sanographix.github.io/tumblr/apollo/" target="_blank">Apollo</a> theme, designed by <a href="http://www.sanographix.net/" target="_blank">SANOGRAPHIX.NET</a><br>
+		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+	</span>
+</footer>
+
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

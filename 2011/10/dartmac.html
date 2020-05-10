@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Dartの開発環境を作ってみる(Mac版) | 骨折り損のくたびれ儲け</title>
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="構築環境  Mac OS X 10.6.8 Xcode 4.0.2この時点では、ドツボにはまるとは思っていませんでした。  １．はじめに（参考）  XCodeをインストールすでに入っていたので飛ばしました。 depot_toolsをインストール(参考)  1$ svn co http:&#x2F;&#x2F;src.chromium.org&#x2F;svn&#x2F;trunk&#x2F;too">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Dartの開発環境を作ってみる(Mac版)">
+<meta property="og:url" content="http://bornknow.com/2011/10/dartmac.html">
+<meta property="og:site_name" content="骨折り損のくたびれ儲け">
+<meta property="og:description" content="構築環境  Mac OS X 10.6.8 Xcode 4.0.2この時点では、ドツボにはまるとは思っていませんでした。  １．はじめに（参考）  XCodeをインストールすでに入っていたので飛ばしました。 depot_toolsをインストール(参考)  1$ svn co http:&#x2F;&#x2F;src.chromium.org&#x2F;svn&#x2F;trunk&#x2F;too">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="http://2.bp.blogspot.com/-I6Vw6FImsmM/TpQZ-qrCfRI/AAAAAAAAAHw/ybNtE9b2zlE/s640/Request+for+Permission.jpg">
+<meta property="og:image" content="http://1.bp.blogspot.com/-T3tJ9M_c9Rs/TpQaB557q-I/AAAAAAAAAH4/sl_hjricFMw/s640/Success+code%253D4_AFBFmtQQp-vbfTPfZcyX5M_umxNw-1.jpg">
+<meta property="og:image" content="http://1.bp.blogspot.com/-a0x4oH-7trs/TpQbtgeRD0I/AAAAAAAAAIA/pZZCsJzsJRg/s640/build.py.jpg">
+<meta property="article:published_time" content="2011-10-11T02:59:00.000Z">
+<meta property="article:modified_time" content="2020-05-10T09:41:21.234Z">
+<meta property="article:author" content="bornknow108">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://2.bp.blogspot.com/-I6Vw6FImsmM/TpQZ-qrCfRI/AAAAAAAAAHw/ybNtE9b2zlE/s640/Request+for+Permission.jpg">
+<meta name="twitter:creator" content="@bornknow108">
+<link rel="publisher" href="bornknow108">
+<meta property="fb:app_id" content="1441275542864270">
+  
+    <link rel="alternative" href="/atom.xml" title="骨折り損のくたびれ儲け" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-6062369-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+<body>
+  <div id="container">
+    <div class="mobile-nav-panel">
+	<i class="icon-reorder icon-large"></i>
+</div>
+<header id="header">
+	<div class="clearfix">
+		<h1 class="blog-title">
+			<a href="/">骨折り損のくたびれ儲け</a>
+		</h1>
+		<nav class="nav">
+			<ul>
+				<li><a href="/">Home</a></li><li><a href="/archives">Archives</a></li>
+				<li><a id="nav-search-btn" class="nav-icon" title="Search"></a></li>
+				<li><a href="/atom.xml" id="nav-rss-link" class="nav-icon" title="RSS Feed"></a></li>
+			</ul>
+		</nav>
+		<div id="search-form-wrap">
+			<form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://bornknow.com"></form>
+		</div>
+	</div>
+</header>
+
+    <div id="main">
+      <article id="post-dartmac" class="post">
+	<footer class="entry-meta-header">
+		<span class="meta-elements date">
+			<a href="/2011/10/dartmac.html" class="article-date">
+  <time datetime="2011-10-11T02:59:00.000Z" itemprop="datePublished">2011-10-11</time>
+</a>
+		</span>
+		<span class="meta-elements author">bornknow108</span>
+		<div class="commentscount">
+			
+		</div>
+	</footer>
+	
+	<header class="entry-header">
+		
+			
+  
+    <h1 class="article-title entry-title" itemprop="name">
+      Dartの開発環境を作ってみる(Mac版)
+    </h1>
+  
+
+		
+		<ul class="sns-share--area">
+		  <li>
+			<a href="http://b.hatena.ne.jp/entry/http://bornknow.com/2011/10/dartmac.html"
+			  class="hatena-bookmark-button sns-share--bookmark sns-share--link"
+			  data-hatena-bookmark-title="Dartの開発環境を作ってみる(Mac版)"
+			  data-hatena-bookmark-layout="simple"
+			  title="このエントリーをはてなブックマークに追加">
+			  <i class="fa fa-bookmark fa-lg"></i></a>
+		  </li>
+		  <li>
+			<a class="sns-share--twitter sns-share--link"
+			  href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fbornknow.com%2F2011%2F10%2Fdartmac.html&text=Dartの開発環境を作ってみる(Mac版)" target="_blank">
+			  <i class="fa fa-twitter fa-lg" ></i></a>
+		  </li>
+		  <li>
+			<a class="sns-share--facebook sns-share--link"
+			  href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fbornknow.com%2F2011%2F10%2Fdartmac.html"
+			  onclick="window.open(this.href, 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;"
+			  target="_blank">
+			  <i class="fa fa-facebook fa-lg" ></i></a>
+		  </li>
+		  <li>
+			<a class="sns-share--pocket sns-share--link"
+			  href="http://getpocket.com/edit?url=http%3A%2F%2Fbornknow.com%2F2011%2F10%2Fdartmac.html&title=Dartの開発環境を作ってみる(Mac版)"
+			  onclick="window.open(this.href, 'pocket_window', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;">
+			  <i class="fa fa-chevron-down fa-lg"></i></a>
+		  </li>
+		</ul>
+	</header>
+	<div class="entry-content">
+		
+    	<p><strong>構築環境</strong></p>
+<ul>
+<li>Mac OS X 10.6.8</li>
+<li>Xcode 4.0.2<br>この時点では、ドツボにはまるとは思っていませんでした。</li>
+</ul>
+<h2 id="１．はじめに"><a href="#１．はじめに" class="headerlink" title="１．はじめに"></a>１．はじめに</h2><p>（<a href="http://code.google.com/p/dart/wiki/PreparingYourMachine" target="_blank" rel="noopener">参考</a>）</p>
+<ul>
+<li>XCodeをインストール<br>すでに入っていたので飛ばしました。</li>
+<li>depot_toolsをインストール(<a href="http://code.google.com/p/chromium/wiki/MacBuildInstructions" target="_blank" rel="noopener">参考</a>)</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ svn co http:&#x2F;&#x2F;src.chromium.org&#x2F;svn&#x2F;trunk&#x2F;tools&#x2F;depot_tools</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>depot_toolsのパスを通す</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ export PATH&#x3D;&quot;$PATH&quot;:&#96;pwd&#96;&#x2F;depot_tools</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+</li>
+</ul>
+<p>Xcode４だったので<a href="http://code.google.com/p/chromium/wiki/Xcode4Tips" target="_blank" rel="noopener">ここ</a>も参考にしました。<br>Xcode４には10.5SDKが含まれていないようなので、10.6SDKを<br>利用するように設定する必要があるようです。<br>（こいつに辿りつくまでが大変でした。）<br>##2.ソースを取得<br>（<a href="http://code.google.com/p/dart/wiki/GettingTheSource" target="_blank" rel="noopener">参考</a>）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ gclient config http:&#x2F;&#x2F;dart.googlecode.com&#x2F;svn&#x2F;trunk&#x2F;deps&#x2F;all.deps</span><br></pre></td></tr></table></figure>
+
+<p>同期処理を実行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">$ gclient sync</span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line">*******************************************************************************</span><br><span class="line">* WARNING: Can&#39;t download DumpRenderTree! This is required to test client apps.</span><br><span class="line">* You need to do a one-time configuration step to access Google Storage.</span><br><span class="line">* Please run this command and follow the instructions:</span><br><span class="line">*     third_party&#x2F;gsutil&#x2F;20110627&#x2F;gsutil config</span><br><span class="line">*</span><br><span class="line">* NOTE: When prompted you can leave &quot;project-id&quot; blank. Just hit enter.</span><br><span class="line">*******************************************************************************</span><br><span class="line">Error: Command &#x2F;usr&#x2F;bin&#x2F;python dart&#x2F;tools&#x2F;get_drt.py runhooks returned non-zero exit status 1 in &#x2F;Developer&#x2F;SDKs&#x2F;dart</span><br></pre></td></tr></table></figure>
+
+<p>案の定エラーが出ました。<br>ひとまず、WARNINGの言うとおりに gsutil を実行。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ dart&#x2F;third_party&#x2F;gsutil&#x2F;20110627&#x2F;gsutil config</span><br><span class="line">This script will create a boto config file at</span><br><span class="line">&#x2F;Users&#x2F;administrator&#x2F;.boto</span><br><span class="line">containing your credentials, based on your responses to the following questions.</span><br><span class="line">Please navigate your browser to the following URL:</span><br><span class="line">https:&#x2F;&#x2F;accounts.google.com&#x2F;o&#x2F;oauth2&#x2F;auth?scope&#x3D;https%3A%2F%2Fwww...(略)</span><br><span class="line">In your browser you should see a page that requests you to authorize gsutil to access</span><br><span class="line">Google Storage on your behalf. After you approve, an authorization code will be displayed.</span><br><span class="line">Enter the authorization code:</span><br></pre></td></tr></table></figure>
+
+<p>URLにアクセスして、認証コードを取得してね的なメッセージが表示されたので<br>指定のURL <code>https://accounts.google.com/o/oauth2/auth?scope=https%3A%2F%2Fwww...(略)</code> にアクセス。<br>GSUtilの認証画面が出てきたので、アクセスを許可。</p>
+<p><a href="http://2.bp.blogspot.com/-I6Vw6FImsmM/TpQZ-qrCfRI/AAAAAAAAAHw/ybNtE9b2zlE/s1600/Request+for+Permission.jpg" target="_blank" rel="noopener" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="334" src="http://2.bp.blogspot.com/-I6Vw6FImsmM/TpQZ-qrCfRI/AAAAAAAAAHw/ybNtE9b2zlE/s640/Request+for+Permission.jpg" width="640" /></a></p>
+<p>コードをコピペしてね画面が表示されたので、認証コードの</p>
+<p>ところに貼りつけてエンター！</p>
+<p><a href="http://1.bp.blogspot.com/-T3tJ9M_c9Rs/TpQaB557q-I/AAAAAAAAAH4/sl_hjricFMw/s1600/Success+code%253D4_AFBFmtQQp-vbfTPfZcyX5M_umxNw-1.jpg" target="_blank" rel="noopener" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="248" src="http://1.bp.blogspot.com/-T3tJ9M_c9Rs/TpQaB557q-I/AAAAAAAAAH4/sl_hjricFMw/s640/Success+code%253D4_AFBFmtQQp-vbfTPfZcyX5M_umxNw-1.jpg" width="640" /></a></p>
+<p>つづいて、プロジェクトIDの入力を求められました。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Please navigate your browser to http:&#x2F;&#x2F;code.google.com&#x2F;apis&#x2F;console,</span><br><span class="line">then click &quot;Services&quot; on the left side panel and ensure you have Storage</span><br><span class="line">activated, then click &quot;Storage&quot; on the left side panel and find the &quot;x-goog-project-id&quot; on that page.</span><br><span class="line">What is your project-id?</span><br></pre></td></tr></table></figure>
+
+<p>WARNINGの指示通りにブランクでエンター！</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">No default project ID entered. You will need to edit the default_project_id value</span><br><span class="line">in your boto config file before using &quot;gsutil ls gs:&#x2F;&#x2F;&quot; or &quot;mb&quot; commandswith the default API version 2.</span><br><span class="line">Boto config file &quot;&#x2F;Users&#x2F;administrator&#x2F;.boto&quot; created. If you need to use</span><br><span class="line">a proxy to access the Internet please see the instructions in that file.</span><br></pre></td></tr></table></figure>
+
+<p>なんとなくうまくいったっぽいので、再度、同期を実行してみる</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ gclient sync</span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line">At revision 9575.</span><br><span class="line">Syncing projects: 100% (8&#x2F;8), done.</span><br></pre></td></tr></table></figure>
+
+<p>なんとなく成功！<br>##3.ビルド<br>（<a href="http://code.google.com/p/dart/wiki/Building" target="_blank" rel="noopener">参考</a>）</p>
+<p>とりあえず、説明通りに、以下のコマンドを実行。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ .&#x2F;tools&#x2F;build.py --arch&#x3D;ia32</span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line">&#x3D;&#x3D;&#x3D; BUILD NATIVE TARGET v8_base OF PROJECT v8 WITH CONFIGURATION Debug_ia32 &#x3D;&#x3D;&#x3D;</span><br><span class="line">** BUILD FAILED **</span><br><span class="line">BUILD FAILED</span><br></pre></td></tr></table></figure>
+
+<p>案の定、エラー。<br>32bit？ 64bit? ということで、オプションを変更して実行。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ .&#x2F;tools&#x2F;build.py --arch&#x3D;x64</span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line">&#x3D;&#x3D; BUILD AGGREGATE TARGET generate_builtin_cc_file OF PROJECT dart-runtime WITH CONFIGURATION Debug_x64 &#x3D;&#x3D;&#x3D;</span><br><span class="line">&#x3D;&#x3D;&#x3D; BUILD AGGREGATE TARGET generate_snapshot_test_dat_file OF PROJECT dart-runtime WITH CONFIGURATION Debug_x64 &#x3D;&#x3D;&#x3D;</span><br><span class="line">&#x3D;&#x3D;&#x3D; BUILD NATIVE TARGET v8_base OF PROJECT v8 WITH CONFIGURATION Debug_x64 &#x3D;&#x3D;&#x3D;</span><br><span class="line">** BUILD FAILED **</span><br><span class="line">BUILD FAILED</span><br></pre></td></tr></table></figure>
+
+<p>やっぱりエラー。<br>説明のコメント欄をながめていると、同様のエラーが出ていて、解決方法らしきURLが貼っつけてありました。<br><a href="http://batsuev.com/2011/10/building-google-dart-on-os-x-lion-with-xcode-4/" target="_blank" rel="noopener">Building Google Dart on Mac OS X Lion with XCode 4</a><br>記事の説明通りに、build.pyの該当行にオプションを追加。</p>
+<p><a href="http://1.bp.blogspot.com/-a0x4oH-7trs/TpQbtgeRD0I/AAAAAAAAAIA/pZZCsJzsJRg/s1600/build.py.jpg" target="_blank" rel="noopener" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="227" src="http://1.bp.blogspot.com/-a0x4oH-7trs/TpQbtgeRD0I/AAAAAAAAAIA/pZZCsJzsJRg/s640/build.py.jpg" width="640" /></a></p>
+<p>再度実行したら、成功したようです。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ .&#x2F;tools&#x2F;build.py --arch&#x3D;ia32</span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line">&#x3D;&#x3D;&#x3D; BUILD AGGREGATE TARGET All OF PROJECT dart WITH CONFIGURATION Debug_ia32 &#x3D;&#x3D;&#x3D;</span><br><span class="line">Check dependencies</span><br><span class="line">** BUILD SUCCEEDED **</span><br></pre></td></tr></table></figure>
+
+<p>最後にテストスクリプトを流して終わりです。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$.&#x2F;tools&#x2F;test.py --arch&#x3D;ia32,dartc,chromium</span><br></pre></td></tr></table></figure>
+
+<p>ここに到達するまでで、ちょっと疲れました。<br>dartのオプション</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dart [&lt;vm-flags&gt;] &lt;dart-script-file&gt; [&lt;dart-options&gt;]</span><br><span class="line">&lt;&#x2F;dart-options&gt;&lt;&#x2F;vm-flags&gt;</span><br></pre></td></tr></table></figure>
+
+<p>dartcのオプション</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">dartc [&lt;options&gt;] &lt;dart-script&gt; [script-arguments]</span><br><span class="line">Available options:</span><br><span class="line"> --batch (-batch)                       : Batch mode (for unit testing)</span><br><span class="line"> --check-only (-check-only)             : Do not generate output, only analyze</span><br><span class="line"> --disable-type-optimizations           : Turn off type optimizations</span><br><span class="line">                                           (for debugging)</span><br><span class="line"> --documentation-lib (-documentation-li : Only generate docs for the</span><br><span class="line"> b) VAL                                 :  given library</span><br><span class="line"> --documentation-out (-documentation-ou : Directory to write documentation</span><br><span class="line"> t) VAL                                 :  </span><br><span class="line"> --enable_type_checks                   : Generate runtime type checks</span><br><span class="line"> --fatal-type-errors (-fatal-type-error : Treat type errors as fatal</span><br><span class="line"> s)                                     :  </span><br><span class="line"> --fatal-warnings (-Werror)             : Treat non-type warnings as fatal</span><br><span class="line"> --generate-documentation (-generate-do : Generate docs from source</span><br><span class="line"> cumentation)                           :  </span><br><span class="line"> --generate-isolate-stubs (-generate-is : Classes to generate stubs</span><br><span class="line"> olate-stubs) VAL                       :  (comma-separated list)</span><br><span class="line"> --help (-?, -help)                     : Prints this help message</span><br><span class="line"> --human-readable-output                : Write human readable javascript</span><br><span class="line"> --ignore-unrecognized-flags            : Ignore unrecognized command line flags</span><br><span class="line"> --isolate-stub-out (-isolate-stub-out) : File to receive generated stub output</span><br><span class="line">  VAL                                   :  </span><br><span class="line"> --jvm-metrics                          : Print jvm metrics at end of compile</span><br><span class="line"> --jvm-metrics-detail VAL               : Display summary (default) or</span><br><span class="line">                                           verbose metrics</span><br><span class="line"> --jvm-metrics-format VAL               : Output metrics in tabular (default)</span><br><span class="line">                                           or pretty format</span><br><span class="line"> --jvm-metrics-type VAL                 : Comma-separated list to display:</span><br><span class="line">                                             all:  (default) all stat types</span><br><span class="line">                                             gc:   show garbage collection stats</span><br><span class="line">                                             mem:  show memory stats</span><br><span class="line">                                             jit:  show jit stats</span><br><span class="line"> --metrics                              : Print compilation metrics</span><br><span class="line"> --noincremental (-noincremental)       : Disable incremental compilation</span><br><span class="line"> --optimize (-optimize)                 : Produce optimized code</span><br><span class="line"> --out FILE                             : Write generated JavaSccript  to a file</span><br><span class="line"> --warn_no_such_type                    : Treat some type checks as warnings</span><br><span class="line">                                           instead of fatal errors</span><br><span class="line"> --work (-out) FILE                     : Directory to receive compiler output</span><br><span class="line">                                           for future incremental builds</span><br></pre></td></tr></table></figure>
+
+<p>ia32の方は、dart、dartcともに動きましたが、x64の方はdartがエラーを吐いて動きませんでした。</p>
+<p>インストールをミスったのかもしれませんが、とりあえずia32の方で遊んでみようかと思います。</p>
+
+    
+	</div>
+	<footer class="entry-footer">
+		
+			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<!-- article -->
+			<ins class="adsbygoogle"
+			     style="display:block"
+			     data-ad-client="ca-pub-2875874165633260"
+			     data-ad-slot="8347318920"
+			     data-ad-format="auto"></ins>
+			<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+		
+		<div class="entry-meta-footer">
+			<span class="category">
+				
+			</span>
+			<span class="tags">
+				
+			</span>
+		</div>
+	</footer>
+	
+    
+<nav id="article-nav">
+  
+    <a href="/2011/10/iphone4s.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          iPhone4Sゲットだぜ
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2011/09/google-api.html" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">
+        
+          Google plus APIをさわってみた。
+        
+      </div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+    </div>
+    <div class="mb-search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="Search">
+    <input type="hidden" name="q" value="site:bornknow.com">
+  </form>
+</div>
+<footer id="footer">
+	<h1 class="footer-blog-title">
+		<a href="/">骨折り損のくたびれ儲け</a>
+	</h1>
+	<span class="copyright">
+		&copy; 2020 bornknow108<br>
+		Modify from <a href="http://sanographix.github.io/tumblr/apollo/" target="_blank">Apollo</a> theme, designed by <a href="http://www.sanographix.net/" target="_blank">SANOGRAPHIX.NET</a><br>
+		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+	</span>
+</footer>
+
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

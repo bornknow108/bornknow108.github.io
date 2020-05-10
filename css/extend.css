@@ -1,0 +1,48 @@
+.sns-share--area {
+  margin: auto;
+  padding: 10px 0;
+}
+.sns-share--area li {
+  display: inline-block;
+  list-style-type: none;
+}
+.sns-share--area a:hover {
+  color: #fc0;
+}
+.sns-share--link {
+  display: block;
+  color: #fff;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  line-height: 47px;
+  text-align: center;
+  margin-right: 15px;
+}
+.sns-share--bookmark {
+  background-color: #1487bd;
+}
+.sns-share--twitter {
+  background-color: #55acee;
+}
+.sns-share--facebook {
+  background-color: #3274bd;
+}
+.sns-share--rss {
+  background-color: #75ca1c;
+}
+.sns-share--pocket {
+  background-color: #e54889;
+}
+.article-more-link {
+  text-align: right;
+}
+.entry-content .fancybox img {
+  width: 100%;
+  border: solid 1px #eee;
+}
+.clearfix:after {
+  content: "";
+  clear: both;
+  display: block;
+}

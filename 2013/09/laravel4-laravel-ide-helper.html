@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Laravel4 に Laravel IDE Helper をインストールする | 骨折り損のくたびれ儲け</title>
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="Laravel4 に IDE 用の補完サポート用のソースコードを生成するためのパッケージ Laravel IDE Helper をインストールするときにちょっと手間取ったので手順をまとめておきます。手順自体は、Github で Laravel IDE Helper のページにアクセスして readme.mb を見ていただければ基本問題ないはずです。https:&#x2F;&#x2F;github.com&#x2F;barryv">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Laravel4 に Laravel IDE Helper をインストールする">
+<meta property="og:url" content="http://bornknow.com/2013/09/laravel4-laravel-ide-helper.html">
+<meta property="og:site_name" content="骨折り損のくたびれ儲け">
+<meta property="og:description" content="Laravel4 に IDE 用の補完サポート用のソースコードを生成するためのパッケージ Laravel IDE Helper をインストールするときにちょっと手間取ったので手順をまとめておきます。手順自体は、Github で Laravel IDE Helper のページにアクセスして readme.mb を見ていただければ基本問題ないはずです。https:&#x2F;&#x2F;github.com&#x2F;barryv">
+<meta property="og:locale" content="ja_JP">
+<meta property="article:published_time" content="2013-09-06T03:00:00.000Z">
+<meta property="article:modified_time" content="2020-05-10T09:41:21.238Z">
+<meta property="article:author" content="bornknow108">
+<meta property="article:tag" content="PHP, Laravel4">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator" content="@bornknow108">
+<link rel="publisher" href="bornknow108">
+<meta property="fb:app_id" content="1441275542864270">
+  
+    <link rel="alternative" href="/atom.xml" title="骨折り損のくたびれ儲け" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-6062369-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+<body>
+  <div id="container">
+    <div class="mobile-nav-panel">
+	<i class="icon-reorder icon-large"></i>
+</div>
+<header id="header">
+	<div class="clearfix">
+		<h1 class="blog-title">
+			<a href="/">骨折り損のくたびれ儲け</a>
+		</h1>
+		<nav class="nav">
+			<ul>
+				<li><a href="/">Home</a></li><li><a href="/archives">Archives</a></li>
+				<li><a id="nav-search-btn" class="nav-icon" title="Search"></a></li>
+				<li><a href="/atom.xml" id="nav-rss-link" class="nav-icon" title="RSS Feed"></a></li>
+			</ul>
+		</nav>
+		<div id="search-form-wrap">
+			<form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://bornknow.com"></form>
+		</div>
+	</div>
+</header>
+
+    <div id="main">
+      <article id="post-laravel4-laravel-ide-helper" class="post">
+	<footer class="entry-meta-header">
+		<span class="meta-elements date">
+			<a href="/2013/09/laravel4-laravel-ide-helper.html" class="article-date">
+  <time datetime="2013-09-06T03:00:00.000Z" itemprop="datePublished">2013-09-06</time>
+</a>
+		</span>
+		<span class="meta-elements author">bornknow108</span>
+		<div class="commentscount">
+			
+		</div>
+	</footer>
+	
+	<header class="entry-header">
+		
+			
+  
+    <h1 class="article-title entry-title" itemprop="name">
+      Laravel4 に Laravel IDE Helper をインストールする
+    </h1>
+  
+
+		
+		<ul class="sns-share--area">
+		  <li>
+			<a href="http://b.hatena.ne.jp/entry/http://bornknow.com/2013/09/laravel4-laravel-ide-helper.html"
+			  class="hatena-bookmark-button sns-share--bookmark sns-share--link"
+			  data-hatena-bookmark-title="Laravel4 に Laravel IDE Helper をインストールする"
+			  data-hatena-bookmark-layout="simple"
+			  title="このエントリーをはてなブックマークに追加">
+			  <i class="fa fa-bookmark fa-lg"></i></a>
+		  </li>
+		  <li>
+			<a class="sns-share--twitter sns-share--link"
+			  href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fbornknow.com%2F2013%2F09%2Flaravel4-laravel-ide-helper.html&text=Laravel4 に Laravel IDE Helper をインストールする" target="_blank">
+			  <i class="fa fa-twitter fa-lg" ></i></a>
+		  </li>
+		  <li>
+			<a class="sns-share--facebook sns-share--link"
+			  href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fbornknow.com%2F2013%2F09%2Flaravel4-laravel-ide-helper.html"
+			  onclick="window.open(this.href, 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;"
+			  target="_blank">
+			  <i class="fa fa-facebook fa-lg" ></i></a>
+		  </li>
+		  <li>
+			<a class="sns-share--pocket sns-share--link"
+			  href="http://getpocket.com/edit?url=http%3A%2F%2Fbornknow.com%2F2013%2F09%2Flaravel4-laravel-ide-helper.html&title=Laravel4 に Laravel IDE Helper をインストールする"
+			  onclick="window.open(this.href, 'pocket_window', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;">
+			  <i class="fa fa-chevron-down fa-lg"></i></a>
+		  </li>
+		</ul>
+	</header>
+	<div class="entry-content">
+		
+    	<p>Laravel4 に IDE 用の補完サポート用のソースコードを生成するためのパッケージ Laravel IDE Helper をインストールするときにちょっと手間取ったので手順をまとめておきます。<br>手順自体は、Github で Laravel IDE Helper のページにアクセスして readme.mb を見ていただければ基本問題ないはずです。<br><a href="https://github.com/barryvdh/laravel-ide-helper" target="_blank" rel="noopener">https://github.com/barryvdh/laravel-ide-helper</a></p>
+<a id="more"></a>
+
+<p>まずはじめに、Laravel IDE Helper をインストールします。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">% composer require &quot;barryvdh&#x2F;laravel-ide-helper:1.*&quot;</span><br></pre></td></tr></table></figure>
+
+<p>インストールが完了したら、次はアプリケーションの設定ファイルに Laravel IDE Helper を追加します。設定ファイルの app.php の providers の配列の中に、’Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider’ を追加します。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">% vi app&#x2F;config&#x2F;app.php</span><br><span class="line">    &#x2F;*</span><br><span class="line">    |--------------------------------------------------------------------------</span><br><span class="line">    | Autoloaded Service Providers</span><br><span class="line">    |--------------------------------------------------------------------------</span><br><span class="line">    |</span><br><span class="line">    | The service providers listed here will be automatically loaded on the</span><br><span class="line">    | request to your application. Feel free to add your own services to</span><br><span class="line">    | this array to grant expanded functionality to your applications.</span><br><span class="line">    |</span><br><span class="line">    *&#x2F;</span><br><span class="line">    &#39;providers&#39; &#x3D;&gt; array(</span><br><span class="line">        &#39;Illuminate\Foundation\Providers\ArtisanServiceProvider&#39;,</span><br><span class="line">        &#39;Illuminate\Auth\AuthServiceProvider&#39;,</span><br><span class="line">        &#39;Illuminate\Cache\CacheServiceProvider&#39;,</span><br><span class="line">        &#39;Illuminate\Foundation\Providers\CommandCreatorServiceProvider&#39;,</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#39;Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider&#39;,</span><br></pre></td></tr></table></figure>
+
+<p>追加が終わったら、artisan コマンドを実行して、IDE保管用のファイルを生成します。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">% php artisan ide-helper:generate</span><br></pre></td></tr></table></figure>
+
+<p>Laravel のインストールディレクトリに _ide_helper.php が生成されていれば成功です。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">% ls [Laravel のインストールディレクトリ]</span><br><span class="line">CONTRIBUTING.md  app      bootstrap      composer.lock  public     server.php</span><br><span class="line">_ide_helper.php  artisan  composer.json  phpunit.xml    readme.md  vendor</span><br></pre></td></tr></table></figure>
+
+<p>あとは、パッケージを変更した場合に自動で、ヘルパーが生成されるように composer.json の、pre-update-cmd の配列の中に php artisan ide-helper:generate を追加します。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">% vi composer.json</span><br><span class="line">    &quot;scripts&quot;: &#123;</span><br><span class="line">        &quot;post-install-cmd&quot;: [</span><br><span class="line">            &quot;php artisan optimize&quot;</span><br><span class="line">        ],</span><br><span class="line">        &quot;pre-update-cmd&quot;: [</span><br><span class="line">            &quot;php artisan clear-compiled&quot;</span><br><span class="line">        ],</span><br><span class="line">        &quot;post-update-cmd&quot;: [</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">    &quot;php artisan ide-helper:generate&quot;,</span><br><span class="line">    &quot;php artisan optimize&quot;</span><br><span class="line">],</span><br></pre></td></tr></table></figure>
+<p>以上で、Laravel IDE Helper の設定は完了です。</p>
+
+    
+	</div>
+	<footer class="entry-footer">
+		
+			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<!-- article -->
+			<ins class="adsbygoogle"
+			     style="display:block"
+			     data-ad-client="ca-pub-2875874165633260"
+			     data-ad-slot="8347318920"
+			     data-ad-format="auto"></ins>
+			<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+		
+		<div class="entry-meta-footer">
+			<span class="category">
+				
+			</span>
+			<span class="tags">
+				
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP-Laravel4/" rel="tag">PHP, Laravel4</a></li></ul>
+
+			</span>
+		</div>
+	</footer>
+	
+    
+<nav id="article-nav">
+  
+    <a href="/2013/11/vagrantthere-was-error-while-executing.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Vagrant起動時に「There was an error while executing `VBoxManage`...」って怒られたとき
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2013/09/laravel4.html" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">
+        
+          Laravel4の環境構築をまとめておく
+        
+      </div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+    </div>
+    <div class="mb-search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="Search">
+    <input type="hidden" name="q" value="site:bornknow.com">
+  </form>
+</div>
+<footer id="footer">
+	<h1 class="footer-blog-title">
+		<a href="/">骨折り損のくたびれ儲け</a>
+	</h1>
+	<span class="copyright">
+		&copy; 2020 bornknow108<br>
+		Modify from <a href="http://sanographix.github.io/tumblr/apollo/" target="_blank">Apollo</a> theme, designed by <a href="http://www.sanographix.net/" target="_blank">SANOGRAPHIX.NET</a><br>
+		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+	</span>
+</footer>
+
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

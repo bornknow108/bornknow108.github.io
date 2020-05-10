@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>RoundCubeとの連携 | 骨折り損のくたびれ儲け</title>
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="WEBメーラーのRoundCubeで別のシステムのリンクから、自動でログインするようにカスタマイズしてみました。参考までに。 RoundCube - index.phpの変更 アクションやタスクではなくセッション情報を元に ログインしているかどうかを判断させるように変更 （自動ログインとは関係ありません。）  1234&#x2F;&#x2F; try to log in&#x2F;&#x2F;if">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RoundCubeとの連携">
+<meta property="og:url" content="http://bornknow.com/2008/12/webroundcubehttproundcube.html">
+<meta property="og:site_name" content="骨折り損のくたびれ儲け">
+<meta property="og:description" content="WEBメーラーのRoundCubeで別のシステムのリンクから、自動でログインするようにカスタマイズしてみました。参考までに。 RoundCube - index.phpの変更 アクションやタスクではなくセッション情報を元に ログインしているかどうかを判断させるように変更 （自動ログインとは関係ありません。）  1234&#x2F;&#x2F; try to log in&#x2F;&#x2F;if">
+<meta property="og:locale" content="ja_JP">
+<meta property="article:published_time" content="2008-12-09T17:45:00.013Z">
+<meta property="article:modified_time" content="2020-05-10T09:41:21.247Z">
+<meta property="article:author" content="bornknow108">
+<meta property="article:tag" content="開発,">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator" content="@bornknow108">
+<link rel="publisher" href="bornknow108">
+<meta property="fb:app_id" content="1441275542864270">
+  
+    <link rel="alternative" href="/atom.xml" title="骨折り損のくたびれ儲け" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-6062369-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+<body>
+  <div id="container">
+    <div class="mobile-nav-panel">
+	<i class="icon-reorder icon-large"></i>
+</div>
+<header id="header">
+	<div class="clearfix">
+		<h1 class="blog-title">
+			<a href="/">骨折り損のくたびれ儲け</a>
+		</h1>
+		<nav class="nav">
+			<ul>
+				<li><a href="/">Home</a></li><li><a href="/archives">Archives</a></li>
+				<li><a id="nav-search-btn" class="nav-icon" title="Search"></a></li>
+				<li><a href="/atom.xml" id="nav-rss-link" class="nav-icon" title="RSS Feed"></a></li>
+			</ul>
+		</nav>
+		<div id="search-form-wrap">
+			<form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://bornknow.com"></form>
+		</div>
+	</div>
+</header>
+
+    <div id="main">
+      <article id="post-webroundcubehttproundcube" class="post">
+	<footer class="entry-meta-header">
+		<span class="meta-elements date">
+			<a href="/2008/12/webroundcubehttproundcube.html" class="article-date">
+  <time datetime="2008-12-09T17:45:00.013Z" itemprop="datePublished">2008-12-10</time>
+</a>
+		</span>
+		<span class="meta-elements author">bornknow108</span>
+		<div class="commentscount">
+			
+		</div>
+	</footer>
+	
+	<header class="entry-header">
+		
+			
+  
+    <h1 class="article-title entry-title" itemprop="name">
+      RoundCubeとの連携
+    </h1>
+  
+
+		
+		<ul class="sns-share--area">
+		  <li>
+			<a href="http://b.hatena.ne.jp/entry/http://bornknow.com/2008/12/webroundcubehttproundcube.html"
+			  class="hatena-bookmark-button sns-share--bookmark sns-share--link"
+			  data-hatena-bookmark-title="RoundCubeとの連携"
+			  data-hatena-bookmark-layout="simple"
+			  title="このエントリーをはてなブックマークに追加">
+			  <i class="fa fa-bookmark fa-lg"></i></a>
+		  </li>
+		  <li>
+			<a class="sns-share--twitter sns-share--link"
+			  href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fbornknow.com%2F2008%2F12%2Fwebroundcubehttproundcube.html&text=RoundCubeとの連携" target="_blank">
+			  <i class="fa fa-twitter fa-lg" ></i></a>
+		  </li>
+		  <li>
+			<a class="sns-share--facebook sns-share--link"
+			  href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fbornknow.com%2F2008%2F12%2Fwebroundcubehttproundcube.html"
+			  onclick="window.open(this.href, 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;"
+			  target="_blank">
+			  <i class="fa fa-facebook fa-lg" ></i></a>
+		  </li>
+		  <li>
+			<a class="sns-share--pocket sns-share--link"
+			  href="http://getpocket.com/edit?url=http%3A%2F%2Fbornknow.com%2F2008%2F12%2Fwebroundcubehttproundcube.html&title=RoundCubeとの連携"
+			  onclick="window.open(this.href, 'pocket_window', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;">
+			  <i class="fa fa-chevron-down fa-lg"></i></a>
+		  </li>
+		</ul>
+	</header>
+	<div class="entry-content">
+		
+    	<p>WEBメーラーの<a href="http://roundcube.net/" target="_blank" rel="noopener">RoundCube</a>で<br>別のシステムのリンクから、自動でログインするようにカスタマイズしてみました。<br>参考までに。</p>
+<div style="font-weight:bold">RoundCube - index.phpの変更
+アクションやタスクではなくセッション情報を元に
+ログインしているかどうかを判断させるように変更
+（自動ログインとは関係ありません。）
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&#x2F;&#x2F; try to log in</span><br><span class="line">&#x2F;&#x2F;if ($RCMAIL-&gt;action&#x3D;&#x3D;&#39;login&#39; &amp;&amp; $RCMAIL-&gt;task&#x3D;&#x3D;&#39;mail&#39;) &#123;</span><br><span class="line">if (!isset($_SESSION[&#39;user_id&#39;])) &#123;</span><br></pre></td></tr></table></figure>
+
+<p><code>※この改変は、自己責任で行ってください。システムに支障がでても私は一切責任を負いません</code><br><strong>RoundCube自動ログイン</strong></p>
+<p>RoundCubeへのリンクが設定されているページで<br>Ajaxを用いてバックグラウンドでRoundCubeのログイン処理をあらかじめ実行する。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;script type&#x3D;&quot;text&#x2F;javascript&quot; charset&#x3D;&quot;utf-8&quot; src&#x3D;&quot;javascript_dir&#x2F;jquery.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">&lt;script type&#x3D;&quot;text&#x2F;javascript&quot;&gt;</span><br><span class="line">    $j(document).ready(function() &#123;</span><br><span class="line">        &#x2F;&#x2F; バックグラウンドでroundcubeへの自動ログインを実行</span><br><span class="line">        $j.ajaxSetup(&#123;async : false&#125;);</span><br><span class="line">        $j.post(</span><br><span class="line">            &#39;roundcube_path&#x2F;index.php?_action&#x3D;login&#39;</span><br><span class="line">        ,   &#123;</span><br><span class="line">                _action : &#39;login&#39;</span><br><span class="line">             ,  _user : &#39;hogehoge&#39;</span><br><span class="line">             ,  _pass : &#39;hogehoge&#39;</span><br><span class="line">             ,  _host : &#39;hogehoge&#39;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+<p>*<em>起動用のリンク *</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;a href&#x3D;&quot;roundcube_path&#x2F;index.php?_task&#x3D;mail&quot;&gt;RoundCube起動&lt;&#x2F;a&gt;</span><br><span class="line">&lt;a href&#x3D;&quot;roundcube_path&#x2F;index.php?_action&#x3D;compose&amp;_task&#x3D;mail&quot;&gt;メール作成画面起動&lt;&#x2F;a&gt;</span><br><span class="line">&lt;a &#x2F;mail&#x2F;?_action&#x3D;compose&amp;_task&#x3D;mail&amp;_to&#x3D;hoge@exsample.com&amp;_subject&#x3D;hogehoge&quot;&gt;メール作成画面起動(To、Subject指定)&lt;&#x2F;a&gt;</span><br></pre></td></tr></table></figure>
+
+    
+	</div>
+	<footer class="entry-footer">
+		
+			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<!-- article -->
+			<ins class="adsbygoogle"
+			     style="display:block"
+			     data-ad-client="ca-pub-2875874165633260"
+			     data-ad-slot="8347318920"
+			     data-ad-format="auto"></ins>
+			<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+		
+		<div class="entry-meta-footer">
+			<span class="category">
+				
+			</span>
+			<span class="tags">
+				
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%96%8B%E7%99%BA/" rel="tag">開発,</a></li></ul>
+
+			</span>
+		</div>
+	</footer>
+	
+    
+<nav id="article-nav">
+  
+    <a href="/2008/12/blog-post-10-1.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          雑記
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2008/12/yum-subverion-webdavsubversion-php-yum.html" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">
+        
+          やったこと
+        
+      </div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+    </div>
+    <div class="mb-search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="Search">
+    <input type="hidden" name="q" value="site:bornknow.com">
+  </form>
+</div>
+<footer id="footer">
+	<h1 class="footer-blog-title">
+		<a href="/">骨折り損のくたびれ儲け</a>
+	</h1>
+	<span class="copyright">
+		&copy; 2020 bornknow108<br>
+		Modify from <a href="http://sanographix.github.io/tumblr/apollo/" target="_blank">Apollo</a> theme, designed by <a href="http://www.sanographix.net/" target="_blank">SANOGRAPHIX.NET</a><br>
+		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+	</span>
+</footer>
+
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

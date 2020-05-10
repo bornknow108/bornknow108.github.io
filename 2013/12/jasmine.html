@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Jasmine についてメモっておく | 骨折り損のくたびれ儲け</title>
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="JavaScript のテスティングフレームワーク Jasmine の使い方をざっくりまとめておく。###テストスイートの定義describe(【ラベル】, 【function】); 123describe(&quot;ここにタイトルが入ります。&quot;, function() &amp;#123; &#x2F;&#x2F; ここにテストケースが入ります。&amp;#125;);">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Jasmine についてメモっておく">
+<meta property="og:url" content="http://bornknow.com/2013/12/jasmine.html">
+<meta property="og:site_name" content="骨折り損のくたびれ儲け">
+<meta property="og:description" content="JavaScript のテスティングフレームワーク Jasmine の使い方をざっくりまとめておく。###テストスイートの定義describe(【ラベル】, 【function】); 123describe(&quot;ここにタイトルが入ります。&quot;, function() &amp;#123; &#x2F;&#x2F; ここにテストケースが入ります。&amp;#125;);">
+<meta property="og:locale" content="ja_JP">
+<meta property="article:published_time" content="2013-12-25T21:24:00.000Z">
+<meta property="article:modified_time" content="2020-05-10T09:41:21.237Z">
+<meta property="article:author" content="bornknow108">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator" content="@bornknow108">
+<link rel="publisher" href="bornknow108">
+<meta property="fb:app_id" content="1441275542864270">
+  
+    <link rel="alternative" href="/atom.xml" title="骨折り損のくたびれ儲け" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-6062369-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+<body>
+  <div id="container">
+    <div class="mobile-nav-panel">
+	<i class="icon-reorder icon-large"></i>
+</div>
+<header id="header">
+	<div class="clearfix">
+		<h1 class="blog-title">
+			<a href="/">骨折り損のくたびれ儲け</a>
+		</h1>
+		<nav class="nav">
+			<ul>
+				<li><a href="/">Home</a></li><li><a href="/archives">Archives</a></li>
+				<li><a id="nav-search-btn" class="nav-icon" title="Search"></a></li>
+				<li><a href="/atom.xml" id="nav-rss-link" class="nav-icon" title="RSS Feed"></a></li>
+			</ul>
+		</nav>
+		<div id="search-form-wrap">
+			<form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://bornknow.com"></form>
+		</div>
+	</div>
+</header>
+
+    <div id="main">
+      <article id="post-jasmine" class="post">
+	<footer class="entry-meta-header">
+		<span class="meta-elements date">
+			<a href="/2013/12/jasmine.html" class="article-date">
+  <time datetime="2013-12-25T21:24:00.000Z" itemprop="datePublished">2013-12-26</time>
+</a>
+		</span>
+		<span class="meta-elements author">bornknow108</span>
+		<div class="commentscount">
+			
+		</div>
+	</footer>
+	
+	<header class="entry-header">
+		
+			
+  
+    <h1 class="article-title entry-title" itemprop="name">
+      Jasmine についてメモっておく
+    </h1>
+  
+
+		
+		<ul class="sns-share--area">
+		  <li>
+			<a href="http://b.hatena.ne.jp/entry/http://bornknow.com/2013/12/jasmine.html"
+			  class="hatena-bookmark-button sns-share--bookmark sns-share--link"
+			  data-hatena-bookmark-title="Jasmine についてメモっておく"
+			  data-hatena-bookmark-layout="simple"
+			  title="このエントリーをはてなブックマークに追加">
+			  <i class="fa fa-bookmark fa-lg"></i></a>
+		  </li>
+		  <li>
+			<a class="sns-share--twitter sns-share--link"
+			  href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fbornknow.com%2F2013%2F12%2Fjasmine.html&text=Jasmine についてメモっておく" target="_blank">
+			  <i class="fa fa-twitter fa-lg" ></i></a>
+		  </li>
+		  <li>
+			<a class="sns-share--facebook sns-share--link"
+			  href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fbornknow.com%2F2013%2F12%2Fjasmine.html"
+			  onclick="window.open(this.href, 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;"
+			  target="_blank">
+			  <i class="fa fa-facebook fa-lg" ></i></a>
+		  </li>
+		  <li>
+			<a class="sns-share--pocket sns-share--link"
+			  href="http://getpocket.com/edit?url=http%3A%2F%2Fbornknow.com%2F2013%2F12%2Fjasmine.html&title=Jasmine についてメモっておく"
+			  onclick="window.open(this.href, 'pocket_window', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;">
+			  <i class="fa fa-chevron-down fa-lg"></i></a>
+		  </li>
+		</ul>
+	</header>
+	<div class="entry-content">
+		
+    	<p>JavaScript のテスティングフレームワーク Jasmine の使い方をざっくりまとめておく。<br>###テストスイートの定義<br>describe(【ラベル】, 【function】);</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">describe(&quot;ここにタイトルが入ります。&quot;, function() &#123;</span><br><span class="line"> &#x2F;&#x2F; ここにテストケースが入ります。</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+<p>###テストケースの定義<br>it(【ラベル】, 【function】)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">describe(&quot;テストスイート&quot;, function() &#123;</span><br><span class="line"> it (&quot;テストケース&quot;, function() &#123;</span><br><span class="line">  &#x2F;&#x2F; ここにテストが入ります。</span><br><span class="line"> &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>###アサーション<br>expect(【比較元】).【比較用メソッド】<br>expect(【比較元】).not.【比較用メソッド】</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">describe(&quot;サンプルスイート&quot;, function() &#123;</span><br><span class="line"> var hoge;</span><br><span class="line"> it (&quot;変数の値が true かどうかを確認する&quot;, function() &#123;</span><br><span class="line">  hoge &#x3D; true;</span><br><span class="line">  expect(hoge).toBe(true);</span><br><span class="line"> &#125;);</span><br><span class="line"> it (&quot;変数の値が false かどうかを確認する&quot;, function() &#123;</span><br><span class="line">  hoge &#x3D; false;</span><br><span class="line">  expect(hoge).not.toBe(true);</span><br><span class="line"> &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>###用意されている比較用のメソッド<br>####”===” で比較<br>toBe</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">it (&quot; &#x3D;&#x3D;&#x3D; で比較する&quot;, function() &#123;</span><br><span class="line"> var hoge &#x3D; 10;</span><br><span class="line"> expect(hoge).toBe(10);</span><br><span class="line"> expect(hoge).not.toBe(null);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>####プリミティブ型もしくはオブジェクトの比較<br>toEqual</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">it (&quot;リテラルの比較&quot;, function() &#123;</span><br><span class="line"> var hoge &#x3D; 10;</span><br><span class="line"> expect(hoge).toEqual(10);</span><br><span class="line">&#125;);</span><br><span class="line">it (&quot;オブジェクトの比較&quot;, function() &#123;</span><br><span class="line"> var hoge &#x3D; &#123;a : 1, b : 2&#125;;</span><br><span class="line"> var fuga &#x3D; &#123;a : 1, b : 2&#125;;</span><br><span class="line"> expect(hoge).toEqual(fuga);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>####正規表現での比較<br>toMatch</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">it (&quot;正規表現で比較&quot;, function() &#123;</span><br><span class="line"> var hoge &#x3D; &quot;hoge fuga fuga&quot;;</span><br><span class="line"> expect(hoge).toMatch(&#x2F;hoge&#x2F;);</span><br><span class="line"> expect(hoge).toMatch(&quot;hoge&quot;);</span><br><span class="line"> expect(hoge).not.toMatch(&#x2F;moga&#x2F;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>####定義されているかの比較<br>toBeDefined<br>toBeUndefined</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">it (&quot;定義されているか比較&quot;, function()&#123;</span><br><span class="line"> var hoge &#x3D; &#123;a : 1, b : 2&#125;;</span><br><span class="line"> expect(hoge.a).toBeDefined();</span><br><span class="line"> expect(hoge.a).not.toBeUndefined();</span><br><span class="line">&#125;);</span><br><span class="line">it (&quot;未定義か比較&quot;, function()&#123;</span><br><span class="line"> var hoge &#x3D; &#123;a : 1, b : 2&#125;;</span><br><span class="line"> expect(hoge.c).not.toBeDefined();</span><br><span class="line"> expect(hoge.c).toBeUndefined();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>####null と比較<br>toBeNull</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">it (&quot;null か比較&quot;, function()&#123;</span><br><span class="line"> var hoge &#x3D; null;</span><br><span class="line"> var fuga &#x3D; &#39;a&#39;;</span><br><span class="line"> expect(hoge).toBeNull();</span><br><span class="line"> expect(fuga).not.toBeNull();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>####Booleanでの比較<br>toBeTruthy<br>toBeFalsy</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">it (&quot;(!!)での比較&quot;, function() &#123;</span><br><span class="line"> expect(hoge).toBeTruthy();</span><br><span class="line">&#125;);</span><br><span class="line">it (&quot;(!!!)での比較&quot;, function() &#123;</span><br><span class="line"> expect(hoge).toBeFalsy();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>####値が含まれているかの比較<br>toContain</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">it (&quot;配列に値が含まれているかの比較&quot;, function() &#123;</span><br><span class="line"> var array &#x3D; [&#39;hoge&#39;, &#39;fuga&#39;, &#39;moga&#39;];</span><br><span class="line"> expect(array).toContain(&#39;fuga&#39;);</span><br><span class="line"> expect(array).not.toContain(&#39;saga&#39;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>####数値の比較<br>toBeLessThan<br>toBeGeaterThan<br>toBeCloseTo</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">it (&quot;数値が指定の値以下かを比較&quot;, function() &#123;</span><br><span class="line"> var a &#x3D; 3.1;</span><br><span class="line"> var b &#x3D; 2.72;</span><br><span class="line"> expect(b).toBeLessThan(a);</span><br><span class="line"> expect(a).not.toBeLessThan(b);</span><br><span class="line">&#125;);</span><br><span class="line">it (&quot;数値が指定の値以上かを比較&quot;, function() &#123;</span><br><span class="line"> var a &#x3D; 3.1;</span><br><span class="line"> var b &#x3D; 2.72;</span><br><span class="line"> expect(a).toBeGeaterThan(b);</span><br><span class="line"> expect(b).not.toBeGeaterThan(a);</span><br><span class="line">&#125;);</span><br><span class="line">it (&quot;数値の桁を合わせて比較&quot;, function() &#123;</span><br><span class="line"> var a &#x3D; 3.1;</span><br><span class="line"> var b &#x3D; 2.72;</span><br><span class="line"> expect(a).toBeCloseTo(b, 0);</span><br><span class="line"> expect(a).not.toBeCloseTo(b, 2);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>####NaNかどうか比較<br>toBeNaN</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">it (&quot;NaNかどうかを比較する&quot;, function() &#123;</span><br><span class="line"> expect(NaN).toBeNaN();</span><br><span class="line"> expect(1).not.toBeNaN();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>####例外かどうか比較<br>toThrow</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">it(&quot;例外を投げるかどうかを比較する&quot;, function() &#123;</span><br><span class="line"> var hoge &#x3D; function() &#123;</span><br><span class="line"> return 1 + 2;</span><br><span class="line">&#125;;</span><br><span class="line">var fuga &#x3D; function() &#123;</span><br><span class="line"> return a + 1;</span><br><span class="line">&#125;;</span><br><span class="line">expect(hoge).not.toThrow();</span><br><span class="line"> expect(fuga).toThrow();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>###・初期処理と終了処理<br>テストケースの初期処理と終了処理を実行する場合は、beforeEach と afterEach を使います。<br>beforeEach と afterEach はそれぞれのテストケースの前後に呼び出されます。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">describe(&quot;テストスイート&quot;, function() &#123;</span><br><span class="line"> beforeEach(function() &#123;</span><br><span class="line"> console.log(&quot;初期処理\n&quot;);</span><br><span class="line">&#125;);</span><br><span class="line">it (&quot;テストケース1&quot;, function() &#123;</span><br><span class="line"> console.log(&quot;テストケース1\n&quot;);</span><br><span class="line">&#125;);</span><br><span class="line">it (&quot;テストケース2&quot;, function() &#123;</span><br><span class="line"> console.log(&quot;テストケース2\n&quot;);</span><br><span class="line">&#125;);</span><br><span class="line">afterEach(function()&#123;</span><br><span class="line"> console.log(&quot;終了処理\n&quot;);</span><br><span class="line">&#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="実行結果"><a href="#実行結果" class="headerlink" title="実行結果"></a>実行結果</h2><p>初期処理<br>テストケース1<br>終了処理<br>初期処理<br>テストケース2<br>終了処理<br>beforeEach と afterEach をテストスイートの前後で呼び出す場合は<br>以下のように記述します。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">describe(&quot;テストスイート外&quot;, function() &#123;</span><br><span class="line"> beforeEach(function() &#123;</span><br><span class="line">  console.log(&quot;初期処理\n&quot;);</span><br><span class="line"> &#125;);</span><br><span class="line"> afterEach(function()&#123;</span><br><span class="line">  console.log(&quot;終了処理\n&quot;);</span><br><span class="line"> &#125;);</span><br><span class="line"> describe(&quot;テストスイート内&quot;, function() &#123;</span><br><span class="line">  it (&quot;テストケース1&quot;, function() &#123;</span><br><span class="line">   console.log(&quot;テストケース1\n&quot;);</span><br><span class="line">  &#125;);</span><br><span class="line">  it (&quot;テストケース2&quot;, function() &#123;</span><br><span class="line">   console.log(&quot;テストケース2\n&quot;);</span><br><span class="line">  &#125;);</span><br><span class="line"> &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="実行結果-1"><a href="#実行結果-1" class="headerlink" title="実行結果"></a>実行結果</h2><p>初期処理<br>テストケース1<br>テストケース2<br>終了処理<br>###テストのスキップ</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">xdescribe(【ラベル】, 【function】);</span><br><span class="line">xit(【ラベル】, 【function】);</span><br><span class="line">xdescribe(&quot;テストスイートのスキップ&quot;, function() &#123;</span><br><span class="line"> it (&quot;テストケース&quot;, function() &#123;</span><br><span class="line"> &#125;);</span><br><span class="line">&#125;);</span><br><span class="line">describe(&quot;テストスイート&quot;, function() &#123;</span><br><span class="line"> xit (&quot;テストケースのスキップ&quot;, function() &#123;</span><br><span class="line"> &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>###SPY<br>後日まとめる。<br><a href="http://pivotal.github.io/jasmine/" target="_blank" rel="noopener">http://pivotal.github.io/jasmine/</a></p>
+
+    
+	</div>
+	<footer class="entry-footer">
+		
+			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<!-- article -->
+			<ins class="adsbygoogle"
+			     style="display:block"
+			     data-ad-client="ca-pub-2875874165633260"
+			     data-ad-slot="8347318920"
+			     data-ad-format="auto"></ins>
+			<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+		
+		<div class="entry-meta-footer">
+			<span class="category">
+				
+			</span>
+			<span class="tags">
+				
+			</span>
+		</div>
+	</footer>
+	
+    
+<nav id="article-nav">
+  
+    <a href="/2015/07/mvno.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          MVNOへ移りました。
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2013/12/mac-karma-jasmine.html" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">
+        
+          Mac + Karma + Jasmine 環境構築について
+        
+      </div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+    </div>
+    <div class="mb-search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="Search">
+    <input type="hidden" name="q" value="site:bornknow.com">
+  </form>
+</div>
+<footer id="footer">
+	<h1 class="footer-blog-title">
+		<a href="/">骨折り損のくたびれ儲け</a>
+	</h1>
+	<span class="copyright">
+		&copy; 2020 bornknow108<br>
+		Modify from <a href="http://sanographix.github.io/tumblr/apollo/" target="_blank">Apollo</a> theme, designed by <a href="http://www.sanographix.net/" target="_blank">SANOGRAPHIX.NET</a><br>
+		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+	</span>
+</footer>
+
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

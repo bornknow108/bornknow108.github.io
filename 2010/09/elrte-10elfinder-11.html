@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>『elRTE 1.0』と『elFinder 1.1』でドツボった。 | 骨折り損のくたびれ儲け</title>
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="ロシア発のWYSIWYGがかなりよさげ。 elRTEとelFinder導入した際にちょっとドツボったので設置方法をメモっておく。 『elRTE 1.0』からjQuery-UIのバージョンが上がりました。そのためそのままインストールすると『elRTE 1.0』と『elFinder 1.1』でjQuery-UIのバージョンが異なるためまともに動きませんでした。ちょいと調べると、利用しているモジュールに">
+<meta property="og:type" content="article">
+<meta property="og:title" content="『elRTE 1.0』と『elFinder 1.1』でドツボった。">
+<meta property="og:url" content="http://bornknow.com/2010/09/elrte-10elfinder-11.html">
+<meta property="og:site_name" content="骨折り損のくたびれ儲け">
+<meta property="og:description" content="ロシア発のWYSIWYGがかなりよさげ。 elRTEとelFinder導入した際にちょっとドツボったので設置方法をメモっておく。 『elRTE 1.0』からjQuery-UIのバージョンが上がりました。そのためそのままインストールすると『elRTE 1.0』と『elFinder 1.1』でjQuery-UIのバージョンが異なるためまともに動きませんでした。ちょいと調べると、利用しているモジュールに">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="http://3.bp.blogspot.com/_1DT3KqJm8Ng/TIBqAxeZlDI/AAAAAAAAABg/9-e_gUQ2zbM/s320/elRTE+-+open+source+WYSIWYG+editor+for+Web.jpg">
+<meta property="og:image" content="http://4.bp.blogspot.com/_1DT3KqJm8Ng/TIBpgVxQHmI/AAAAAAAAABY/IAUE0EDyGgo/s320/WYSIWYG+Sample-1.jpg">
+<meta property="article:published_time" content="2010-09-02T18:19:00.004Z">
+<meta property="article:modified_time" content="2020-05-10T09:41:21.234Z">
+<meta property="article:author" content="bornknow108">
+<meta property="article:tag" content="JavaScript,">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://3.bp.blogspot.com/_1DT3KqJm8Ng/TIBqAxeZlDI/AAAAAAAAABg/9-e_gUQ2zbM/s320/elRTE+-+open+source+WYSIWYG+editor+for+Web.jpg">
+<meta name="twitter:creator" content="@bornknow108">
+<link rel="publisher" href="bornknow108">
+<meta property="fb:app_id" content="1441275542864270">
+  
+    <link rel="alternative" href="/atom.xml" title="骨折り損のくたびれ儲け" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-6062369-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+<body>
+  <div id="container">
+    <div class="mobile-nav-panel">
+	<i class="icon-reorder icon-large"></i>
+</div>
+<header id="header">
+	<div class="clearfix">
+		<h1 class="blog-title">
+			<a href="/">骨折り損のくたびれ儲け</a>
+		</h1>
+		<nav class="nav">
+			<ul>
+				<li><a href="/">Home</a></li><li><a href="/archives">Archives</a></li>
+				<li><a id="nav-search-btn" class="nav-icon" title="Search"></a></li>
+				<li><a href="/atom.xml" id="nav-rss-link" class="nav-icon" title="RSS Feed"></a></li>
+			</ul>
+		</nav>
+		<div id="search-form-wrap">
+			<form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://bornknow.com"></form>
+		</div>
+	</div>
+</header>
+
+    <div id="main">
+      <article id="post-elrte-10elfinder-11" class="post">
+	<footer class="entry-meta-header">
+		<span class="meta-elements date">
+			<a href="/2010/09/elrte-10elfinder-11.html" class="article-date">
+  <time datetime="2010-09-02T18:19:00.004Z" itemprop="datePublished">2010-09-03</time>
+</a>
+		</span>
+		<span class="meta-elements author">bornknow108</span>
+		<div class="commentscount">
+			
+		</div>
+	</footer>
+	
+	<header class="entry-header">
+		
+			
+  
+    <h1 class="article-title entry-title" itemprop="name">
+      『elRTE 1.0』と『elFinder 1.1』でドツボった。
+    </h1>
+  
+
+		
+		<ul class="sns-share--area">
+		  <li>
+			<a href="http://b.hatena.ne.jp/entry/http://bornknow.com/2010/09/elrte-10elfinder-11.html"
+			  class="hatena-bookmark-button sns-share--bookmark sns-share--link"
+			  data-hatena-bookmark-title="『elRTE 1.0』と『elFinder 1.1』でドツボった。"
+			  data-hatena-bookmark-layout="simple"
+			  title="このエントリーをはてなブックマークに追加">
+			  <i class="fa fa-bookmark fa-lg"></i></a>
+		  </li>
+		  <li>
+			<a class="sns-share--twitter sns-share--link"
+			  href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fbornknow.com%2F2010%2F09%2Felrte-10elfinder-11.html&text=『elRTE 1.0』と『elFinder 1.1』でドツボった。" target="_blank">
+			  <i class="fa fa-twitter fa-lg" ></i></a>
+		  </li>
+		  <li>
+			<a class="sns-share--facebook sns-share--link"
+			  href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fbornknow.com%2F2010%2F09%2Felrte-10elfinder-11.html"
+			  onclick="window.open(this.href, 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;"
+			  target="_blank">
+			  <i class="fa fa-facebook fa-lg" ></i></a>
+		  </li>
+		  <li>
+			<a class="sns-share--pocket sns-share--link"
+			  href="http://getpocket.com/edit?url=http%3A%2F%2Fbornknow.com%2F2010%2F09%2Felrte-10elfinder-11.html&title=『elRTE 1.0』と『elFinder 1.1』でドツボった。"
+			  onclick="window.open(this.href, 'pocket_window', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;">
+			  <i class="fa fa-chevron-down fa-lg"></i></a>
+		  </li>
+		</ul>
+	</header>
+	<div class="entry-content">
+		
+    	<p>ロシア発のWYSIWYGがかなりよさげ。<br><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://3.bp.blogspot.com/_1DT3KqJm8Ng/TIBqAxeZlDI/AAAAAAAAABg/9-e_gUQ2zbM/s1600/elRTE+-+open+source+WYSIWYG+editor+for+Web.jpg" target="_blank" rel="noopener"><img style="display:block; margin:0px auto 10px; text-align:center;cursor:pointer; cursor:hand;width: 320px; height: 214px;" src="http://3.bp.blogspot.com/_1DT3KqJm8Ng/TIBqAxeZlDI/AAAAAAAAABg/9-e_gUQ2zbM/s320/elRTE+-+open+source+WYSIWYG+editor+for+Web.jpg" border="0" alt="" id="BLOGGER_PHOTO_ID_5512522505414874162" /></a></p>
+<p><a href="http://elrte.org/" target="_blank" rel="noopener">elRTE</a>と<a href="http://elrte.org/elfinder" target="_blank" rel="noopener">elFinder</a>導入した際にちょっとドツボったので設置方法をメモっておく。</p>
+<p>『elRTE 1.0』からjQuery-UIのバージョンが上がりました。そのためそのままインストールすると<br>『elRTE 1.0』と『elFinder 1.1』でjQuery-UIのバージョンが異なるためまともに動きませんでした。<br>ちょいと調べると、利用しているモジュールに若干の違いがありました。</p>
+<p>『elRTE 1.0』側で使っているの</p>
+<p>Core、Widget、Mouse、Postion、Draggable、Droppable、Resizable、Selectable、Dialog、Effect</p>
+<p>『elFinder 1.1』側で使っていて、『elRTE 1.0』で使っていないもの</p>
+<p>Selectable<br>で、『elRTE 1.0』側にあわせて、最新のjQuery-UIで、上記のモジュールすべてをダウンロードして利用することにしました。<br>Finderもなんとか表示されています。<br><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://4.bp.blogspot.com/_1DT3KqJm8Ng/TIBpgVxQHmI/AAAAAAAAABY/IAUE0EDyGgo/s1600/WYSIWYG+Sample-1.jpg" target="_blank" rel="noopener"><img style="display:block; margin:0px auto 10px; text-align:center;cursor:pointer; cursor:hand;width: 320px; height: 258px;" src="http://4.bp.blogspot.com/_1DT3KqJm8Ng/TIBpgVxQHmI/AAAAAAAAABY/IAUE0EDyGgo/s320/WYSIWYG+Sample-1.jpg" border="0" alt="" id="BLOGGER_PHOTO_ID_5512521948221939298" /></a><br>もう少し動きを調べて問題なければ、TinyMCEからelRTEに乗り換えます。  </p>
+
+    
+	</div>
+	<footer class="entry-footer">
+		
+			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<!-- article -->
+			<ins class="adsbygoogle"
+			     style="display:block"
+			     data-ad-client="ca-pub-2875874165633260"
+			     data-ad-slot="8347318920"
+			     data-ad-format="auto"></ins>
+			<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+		
+		<div class="entry-meta-footer">
+			<span class="category">
+				
+			</span>
+			<span class="tags">
+				
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript,</a></li></ul>
+
+			</span>
+		</div>
+	</footer>
+	
+    
+<nav id="article-nav">
+  
+    <a href="/2010/10/doophporm.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          DooPHPのORMについてのメモ
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2009/12/concrete5-04.html" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">
+        
+          concrete5  編集履歴の日付フォーマットが気に入らない
+        
+      </div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+    </div>
+    <div class="mb-search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="Search">
+    <input type="hidden" name="q" value="site:bornknow.com">
+  </form>
+</div>
+<footer id="footer">
+	<h1 class="footer-blog-title">
+		<a href="/">骨折り損のくたびれ儲け</a>
+	</h1>
+	<span class="copyright">
+		&copy; 2020 bornknow108<br>
+		Modify from <a href="http://sanographix.github.io/tumblr/apollo/" target="_blank">Apollo</a> theme, designed by <a href="http://www.sanographix.net/" target="_blank">SANOGRAPHIX.NET</a><br>
+		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+	</span>
+</footer>
+
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

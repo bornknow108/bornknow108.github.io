@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>骨折り損のくたびれ儲け</title>
+  <meta name="viewport" content="width=device-width">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="骨折り損のくたびれ儲け">
+<meta property="og:url" content="http://bornknow.com/page/5/index.html">
+<meta property="og:site_name" content="骨折り損のくたびれ儲け">
+<meta property="og:locale" content="ja_JP">
+<meta property="article:author" content="bornknow108">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator" content="@bornknow108">
+<link rel="publisher" href="bornknow108">
+<meta property="fb:app_id" content="1441275542864270">
+  
+    <link rel="alternative" href="/atom.xml" title="骨折り損のくたびれ儲け" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-6062369-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+<body>
+  <div id="container">
+    <div class="mobile-nav-panel">
+	<i class="icon-reorder icon-large"></i>
+</div>
+<header id="header">
+	<div class="clearfix">
+		<h1 class="blog-title">
+			<a href="/">骨折り損のくたびれ儲け</a>
+		</h1>
+		<nav class="nav">
+			<ul>
+				<li><a href="/">Home</a></li><li><a href="/archives">Archives</a></li>
+				<li><a id="nav-search-btn" class="nav-icon" title="Search"></a></li>
+				<li><a href="/atom.xml" id="nav-rss-link" class="nav-icon" title="RSS Feed"></a></li>
+			</ul>
+		</nav>
+		<div id="search-form-wrap">
+			<form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://bornknow.com"></form>
+		</div>
+	</div>
+</header>
+
+    <div id="main">
+      
+  
+    <article id="post-lighttpd" class="post">
+	<footer class="entry-meta-header">
+		<span class="meta-elements date">
+			<a href="/2011/03/lighttpd.html" class="article-date">
+  <time datetime="2011-02-28T16:25:00.002Z" itemprop="datePublished">2011-03-01</time>
+</a>
+		</span>
+		<span class="meta-elements author">bornknow108</span>
+		<div class="commentscount">
+			
+		</div>
+	</footer>
+	
+	<header class="entry-header">
+		
+			
+  
+    <h1 itemprop="name" class="entry-title">
+      <a class="article-title" href="/2011/03/lighttpd.html">lighttpd サブドメインごとにディレクトリを自動で振り分け</a>
+    </h1>
+  
+
+		
+		<ul class="sns-share--area">
+		  <li>
+			<a href="http://b.hatena.ne.jp/entry/http://bornknow.com/2011/03/lighttpd.html"
+			  class="hatena-bookmark-button sns-share--bookmark sns-share--link"
+			  data-hatena-bookmark-title=""
+			  data-hatena-bookmark-layout="simple"
+			  title="このエントリーをはてなブックマークに追加">
+			  <i class="fa fa-bookmark fa-lg"></i></a>
+		  </li>
+		  <li>
+			<a class="sns-share--twitter sns-share--link"
+			  href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fbornknow.com%2F2011%2F03%2Flighttpd.html&text=lighttpd サブドメインごとにディレクトリを自動で振り分け" target="_blank">
+			  <i class="fa fa-twitter fa-lg" ></i></a>
+		  </li>
+		  <li>
+			<a class="sns-share--facebook sns-share--link"
+			  href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fbornknow.com%2F2011%2F03%2Flighttpd.html"
+			  onclick="window.open(this.href, 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;"
+			  target="_blank">
+			  <i class="fa fa-facebook fa-lg" ></i></a>
+		  </li>
+		  <li>
+			<a class="sns-share--pocket sns-share--link"
+			  href="http://getpocket.com/edit?url=http%3A%2F%2Fbornknow.com%2F2011%2F03%2Flighttpd.html&title=lighttpd サブドメインごとにディレクトリを自動で振り分け"
+			  onclick="window.open(this.href, 'pocket_window', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;">
+			  <i class="fa fa-chevron-down fa-lg"></i></a>
+		  </li>
+		</ul>
+	</header>
+	<div class="entry-content">
+		
+    	<p>メモ<br>$HTTP[“host”] =~ “^.<em>..</em>.com” {<br>        server.document-root = “/var/www/html/“<br>        evhost.path-pattern = “/var/www/%0/%3/“<br>}</p>
+
+    
+	</div>
+	<footer class="entry-footer">
+		
+		<div class="entry-meta-footer">
+			<span class="category">
+				
+			</span>
+			<span class="tags">
+				
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC-%E3%81%A9%E5%BF%98%E3%82%8C/" rel="tag">サーバー, ど忘れ,</a></li></ul>
+
+			</span>
+		</div>
+	</footer>
+	
+</article>
+
+
+	<hr class="article-devider">
+
+
+
+
+  
+    <article id="post-facebookgooglemap" class="post">
+	<footer class="entry-meta-header">
+		<span class="meta-elements date">
+			<a href="/2011/02/facebookgooglemap.html" class="article-date">
+  <time datetime="2011-02-25T19:43:00.000Z" itemprop="datePublished">2011-02-26</time>
+</a>
+		</span>
+		<span class="meta-elements author">bornknow108</span>
+		<div class="commentscount">
+			
+		</div>
+	</footer>
+	
+	<header class="entry-header">
+		
+			
+  
+    <h1 itemprop="name" class="entry-title">
+      <a class="article-title" href="/2011/02/facebookgooglemap.html">FacebookページにGoogleMapを表示</a>
+    </h1>
+  
+
+		
+		<ul class="sns-share--area">
+		  <li>
+			<a href="http://b.hatena.ne.jp/entry/http://bornknow.com/2011/02/facebookgooglemap.html"
+			  class="hatena-bookmark-button sns-share--bookmark sns-share--link"
+			  data-hatena-bookmark-title=""
+			  data-hatena-bookmark-layout="simple"
+			  title="このエントリーをはてなブックマークに追加">
+			  <i class="fa fa-bookmark fa-lg"></i></a>
+		  </li>
+		  <li>
+			<a class="sns-share--twitter sns-share--link"
+			  href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fbornknow.com%2F2011%2F02%2Ffacebookgooglemap.html&text=FacebookページにGoogleMapを表示" target="_blank">
+			  <i class="fa fa-twitter fa-lg" ></i></a>
+		  </li>
+		  <li>
+			<a class="sns-share--facebook sns-share--link"
+			  href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fbornknow.com%2F2011%2F02%2Ffacebookgooglemap.html"
+			  onclick="window.open(this.href, 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;"
+			  target="_blank">
+			  <i class="fa fa-facebook fa-lg" ></i></a>
+		  </li>
+		  <li>
+			<a class="sns-share--pocket sns-share--link"
+			  href="http://getpocket.com/edit?url=http%3A%2F%2Fbornknow.com%2F2011%2F02%2Ffacebookgooglemap.html&title=FacebookページにGoogleMapを表示"
+			  onclick="window.open(this.href, 'pocket_window', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;">
+			  <i class="fa fa-chevron-down fa-lg"></i></a>
+		  </li>
+		</ul>
+	</header>
+	<div class="entry-content">
+		
+    	<p>FBMLの利用が非推奨になるので<br>Facebookアプリもiframeを利用するのがデフォルトになるようですが、そのおかげでこれまで、FBMLでは出来なかったようなことも簡単にできます。</p>
+<p>たとえば、GoogleMapの表示とかです。<strike>サンプル</strike>(SSLが必須になったので削除しました)</p>
+<p>Facebookアプリケーションの登録の手間を差し引いても、いままでFBMLで苦労してきたことに比べれば、さっさとiframeでつくったほうが楽ちんです。</p>
+<p>ただ、iframeも直接サイトを表示しているわけではなくFacebookのプロキシを介しているようなので、なにかしらの制限があるのかもしれないです。</p>
+
+    
+	</div>
+	<footer class="entry-footer">
+		
+		<div class="entry-meta-footer">
+			<span class="category">
+				
+			</span>
+			<span class="tags">
+				
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript-Facebook-Google-HTML/" rel="tag">JavaScript, Facebook, Google, HTML,</a></li></ul>
+
+			</span>
+		</div>
+	</footer>
+	
+</article>
+
+
+	<hr class="article-devider">
+
+
+
+
+  
+    <article id="post-mathrandom" class="post">
+	<footer class="entry-meta-header">
+		<span class="meta-elements date">
+			<a href="/2011/02/mathrandom.html" class="article-date">
+  <time datetime="2011-02-24T16:07:00.000Z" itemprop="datePublished">2011-02-25</time>
+</a>
+		</span>
+		<span class="meta-elements author">bornknow108</span>
+		<div class="commentscount">
+			
+		</div>
+	</footer>
+	
+	<header class="entry-header">
+		
+			
+  
+    <h1 itemprop="name" class="entry-title">
+      <a class="article-title" href="/2011/02/mathrandom.html">Math.random</a>
+    </h1>
+  
+
+		
+		<ul class="sns-share--area">
+		  <li>
+			<a href="http://b.hatena.ne.jp/entry/http://bornknow.com/2011/02/mathrandom.html"
+			  class="hatena-bookmark-button sns-share--bookmark sns-share--link"
+			  data-hatena-bookmark-title=""
+			  data-hatena-bookmark-layout="simple"
+			  title="このエントリーをはてなブックマークに追加">
+			  <i class="fa fa-bookmark fa-lg"></i></a>
+		  </li>
+		  <li>
+			<a class="sns-share--twitter sns-share--link"
+			  href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fbornknow.com%2F2011%2F02%2Fmathrandom.html&text=Math.random" target="_blank">
+			  <i class="fa fa-twitter fa-lg" ></i></a>
+		  </li>
+		  <li>
+			<a class="sns-share--facebook sns-share--link"
+			  href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fbornknow.com%2F2011%2F02%2Fmathrandom.html"
+			  onclick="window.open(this.href, 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;"
+			  target="_blank">
+			  <i class="fa fa-facebook fa-lg" ></i></a>
+		  </li>
+		  <li>
+			<a class="sns-share--pocket sns-share--link"
+			  href="http://getpocket.com/edit?url=http%3A%2F%2Fbornknow.com%2F2011%2F02%2Fmathrandom.html&title=Math.random"
+			  onclick="window.open(this.href, 'pocket_window', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;">
+			  <i class="fa fa-chevron-down fa-lg"></i></a>
+		  </li>
+		</ul>
+	</header>
+	<div class="entry-content">
+		
+    	<p>Math.floor (Math.random() * ([MAX値] - [MIN値] + 1)) + [MIN値]<br>参考：<a href="http://kb2.adobe.com/jp/cps/228/228622.html" target="_blank" rel="noopener">Math.random() でランダムな整数を取得する方法</a></p>
+
+    
+	</div>
+	<footer class="entry-footer">
+		
+		<div class="entry-meta-footer">
+			<span class="category">
+				
+			</span>
+			<span class="tags">
+				
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%81%A9%E5%BF%98%E3%82%8C/" rel="tag">ど忘れ,</a></li></ul>
+
+			</span>
+		</div>
+	</footer>
+	
+</article>
+
+
+	<hr class="article-devider">
+
+
+
+
+  
+    <article id="post-blog-post-23-1" class="post">
+	<footer class="entry-meta-header">
+		<span class="meta-elements date">
+			<a href="/2011/02/blog-post-23-1.html" class="article-date">
+  <time datetime="2011-02-22T23:29:00.004Z" itemprop="datePublished">2011-02-23</time>
+</a>
+		</span>
+		<span class="meta-elements author">bornknow108</span>
+		<div class="commentscount">
+			
+		</div>
+	</footer>
+	
+	<header class="entry-header">
+		
+			
+  
+    <h1 itemprop="name" class="entry-title">
+      <a class="article-title" href="/2011/02/blog-post-23-1.html">AS3 無名関数の削除</a>
+    </h1>
+  
+
+		
+		<ul class="sns-share--area">
+		  <li>
+			<a href="http://b.hatena.ne.jp/entry/http://bornknow.com/2011/02/blog-post-23-1.html"
+			  class="hatena-bookmark-button sns-share--bookmark sns-share--link"
+			  data-hatena-bookmark-title=""
+			  data-hatena-bookmark-layout="simple"
+			  title="このエントリーをはてなブックマークに追加">
+			  <i class="fa fa-bookmark fa-lg"></i></a>
+		  </li>
+		  <li>
+			<a class="sns-share--twitter sns-share--link"
+			  href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fbornknow.com%2F2011%2F02%2Fblog-post-23-1.html&text=AS3 無名関数の削除" target="_blank">
+			  <i class="fa fa-twitter fa-lg" ></i></a>
+		  </li>
+		  <li>
+			<a class="sns-share--facebook sns-share--link"
+			  href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fbornknow.com%2F2011%2F02%2Fblog-post-23-1.html"
+			  onclick="window.open(this.href, 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;"
+			  target="_blank">
+			  <i class="fa fa-facebook fa-lg" ></i></a>
+		  </li>
+		  <li>
+			<a class="sns-share--pocket sns-share--link"
+			  href="http://getpocket.com/edit?url=http%3A%2F%2Fbornknow.com%2F2011%2F02%2Fblog-post-23-1.html&title=AS3 無名関数の削除"
+			  onclick="window.open(this.href, 'pocket_window', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;">
+			  <i class="fa fa-chevron-down fa-lg"></i></a>
+		  </li>
+		</ul>
+	</header>
+	<div class="entry-content">
+		
+    	<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">removeEventListener( Event.ENTER_FRAME, arguments.callee );</span><br></pre></td></tr></table></figure>
+
+    
+	</div>
+	<footer class="entry-footer">
+		
+		<div class="entry-meta-footer">
+			<span class="category">
+				
+			</span>
+			<span class="tags">
+				
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%81%A9%E5%BF%98%E3%82%8C-AS3/" rel="tag">ど忘れ, AS3,</a></li></ul>
+
+			</span>
+		</div>
+	</footer>
+	
+</article>
+
+
+	<hr class="article-devider">
+
+
+
+
+  
+    <article id="post-facebook-url" class="post">
+	<footer class="entry-meta-header">
+		<span class="meta-elements date">
+			<a href="/2011/02/facebook-url.html" class="article-date">
+  <time datetime="2011-02-22T15:44:00.002Z" itemprop="datePublished">2011-02-23</time>
+</a>
+		</span>
+		<span class="meta-elements author">bornknow108</span>
+		<div class="commentscount">
+			
+		</div>
+	</footer>
+	
+	<header class="entry-header">
+		
+			
+  
+    <h1 itemprop="name" class="entry-title">
+      <a class="article-title" href="/2011/02/facebook-url.html">Facebookページ作成 URL</a>
+    </h1>
+  
+
+		
+		<ul class="sns-share--area">
+		  <li>
+			<a href="http://b.hatena.ne.jp/entry/http://bornknow.com/2011/02/facebook-url.html"
+			  class="hatena-bookmark-button sns-share--bookmark sns-share--link"
+			  data-hatena-bookmark-title=""
+			  data-hatena-bookmark-layout="simple"
+			  title="このエントリーをはてなブックマークに追加">
+			  <i class="fa fa-bookmark fa-lg"></i></a>
+		  </li>
+		  <li>
+			<a class="sns-share--twitter sns-share--link"
+			  href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fbornknow.com%2F2011%2F02%2Ffacebook-url.html&text=Facebookページ作成 URL" target="_blank">
+			  <i class="fa fa-twitter fa-lg" ></i></a>
+		  </li>
+		  <li>
+			<a class="sns-share--facebook sns-share--link"
+			  href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fbornknow.com%2F2011%2F02%2Ffacebook-url.html"
+			  onclick="window.open(this.href, 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;"
+			  target="_blank">
+			  <i class="fa fa-facebook fa-lg" ></i></a>
+		  </li>
+		  <li>
+			<a class="sns-share--pocket sns-share--link"
+			  href="http://getpocket.com/edit?url=http%3A%2F%2Fbornknow.com%2F2011%2F02%2Ffacebook-url.html&title=Facebookページ作成 URL"
+			  onclick="window.open(this.href, 'pocket_window', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;">
+			  <i class="fa fa-chevron-down fa-lg"></i></a>
+		  </li>
+		</ul>
+	</header>
+	<div class="entry-content">
+		
+    	<p><a href="http://www.facebook.com/pages/create.php" target="_blank" rel="noopener">http://www.facebook.com/pages/create.php</a></p>
+
+    
+	</div>
+	<footer class="entry-footer">
+		
+		<div class="entry-meta-footer">
+			<span class="category">
+				
+			</span>
+			<span class="tags">
+				
+			</span>
+		</div>
+	</footer>
+	
+</article>
+
+
+	<hr class="article-devider">
+
+
+
+
+  
+    <article id="post-sharedialog" class="post">
+	<footer class="entry-meta-header">
+		<span class="meta-elements date">
+			<a href="/2011/02/sharedialog.html" class="article-date">
+  <time datetime="2011-02-21T07:17:00.003Z" itemprop="datePublished">2011-02-21</time>
+</a>
+		</span>
+		<span class="meta-elements author">bornknow108</span>
+		<div class="commentscount">
+			
+		</div>
+	</footer>
+	
+	<header class="entry-header">
+		
+			
+  
+    <h1 itemprop="name" class="entry-title">
+      <a class="article-title" href="/2011/02/sharedialog.html">shareボタンじゃなくてdialogを使う。</a>
+    </h1>
+  
+
+		
+		<ul class="sns-share--area">
+		  <li>
+			<a href="http://b.hatena.ne.jp/entry/http://bornknow.com/2011/02/sharedialog.html"
+			  class="hatena-bookmark-button sns-share--bookmark sns-share--link"
+			  data-hatena-bookmark-title=""
+			  data-hatena-bookmark-layout="simple"
+			  title="このエントリーをはてなブックマークに追加">
+			  <i class="fa fa-bookmark fa-lg"></i></a>
+		  </li>
+		  <li>
+			<a class="sns-share--twitter sns-share--link"
+			  href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fbornknow.com%2F2011%2F02%2Fsharedialog.html&text=shareボタンじゃなくてdialogを使う。" target="_blank">
+			  <i class="fa fa-twitter fa-lg" ></i></a>
+		  </li>
+		  <li>
+			<a class="sns-share--facebook sns-share--link"
+			  href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fbornknow.com%2F2011%2F02%2Fsharedialog.html"
+			  onclick="window.open(this.href, 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;"
+			  target="_blank">
+			  <i class="fa fa-facebook fa-lg" ></i></a>
+		  </li>
+		  <li>
+			<a class="sns-share--pocket sns-share--link"
+			  href="http://getpocket.com/edit?url=http%3A%2F%2Fbornknow.com%2F2011%2F02%2Fsharedialog.html&title=shareボタンじゃなくてdialogを使う。"
+			  onclick="window.open(this.href, 'pocket_window', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;">
+			  <i class="fa fa-chevron-down fa-lg"></i></a>
+		  </li>
+		</ul>
+	</header>
+	<div class="entry-content">
+		
+			<p>最近、Facebook ネタばっかりですが、ご容赦ください。</p>
+<p>Facebook の share ボタンが非推奨になってるぽいのですが、<br>どうしても Like じゃなくて （旧型のfb:share-button とか以外の方法で）<br>Share な動きを作りたい、もしくは作らなくてはいけない時ってあると思うので、<br>いろいろとググってみました。</p>
+<p>結果、どうしても share ボタンを作りたければ、Feed Dialog を使うようです。<br>これからの正統派はこっちかもしれません。</p>
+<p>Feed Dialog の作り方は、おおきく２つです。</p>
+<p>※ Feed Dialog を使う前に、Facebookアプリを作成する必要があります。<br>Facebookアプリの作り方は、別途ググッてください。</p>
+			
+				<p class="article-more-link">
+					<a href="/2011/02/sharedialog.html#more">Read More</a>
+				</p>
+      
+    
+	</div>
+	<footer class="entry-footer">
+		
+		<div class="entry-meta-footer">
+			<span class="category">
+				
+			</span>
+			<span class="tags">
+				
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript-Facebook-API/" rel="tag">JavaScript, Facebook, API,</a></li></ul>
+
+			</span>
+		</div>
+	</footer>
+	
+</article>
+
+
+	<hr class="article-devider">
+
+
+
+
+  
+    <article id="post-facebook-2" class="post">
+	<footer class="entry-meta-header">
+		<span class="meta-elements date">
+			<a href="/2011/02/facebook-2.html" class="article-date">
+  <time datetime="2011-02-10T15:39:00.007Z" itemprop="datePublished">2011-02-11</time>
+</a>
+		</span>
+		<span class="meta-elements author">bornknow108</span>
+		<div class="commentscount">
+			
+		</div>
+	</footer>
+	
+	<header class="entry-header">
+		
+			
+  
+    <h1 itemprop="name" class="entry-title">
+      <a class="article-title" href="/2011/02/facebook-2.html">Facebookページをアップグレードしてみた</a>
+    </h1>
+  
+
+		
+		<ul class="sns-share--area">
+		  <li>
+			<a href="http://b.hatena.ne.jp/entry/http://bornknow.com/2011/02/facebook-2.html"
+			  class="hatena-bookmark-button sns-share--bookmark sns-share--link"
+			  data-hatena-bookmark-title=""
+			  data-hatena-bookmark-layout="simple"
+			  title="このエントリーをはてなブックマークに追加">
+			  <i class="fa fa-bookmark fa-lg"></i></a>
+		  </li>
+		  <li>
+			<a class="sns-share--twitter sns-share--link"
+			  href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fbornknow.com%2F2011%2F02%2Ffacebook-2.html&text=Facebookページをアップグレードしてみた" target="_blank">
+			  <i class="fa fa-twitter fa-lg" ></i></a>
+		  </li>
+		  <li>
+			<a class="sns-share--facebook sns-share--link"
+			  href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fbornknow.com%2F2011%2F02%2Ffacebook-2.html"
+			  onclick="window.open(this.href, 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;"
+			  target="_blank">
+			  <i class="fa fa-facebook fa-lg" ></i></a>
+		  </li>
+		  <li>
+			<a class="sns-share--pocket sns-share--link"
+			  href="http://getpocket.com/edit?url=http%3A%2F%2Fbornknow.com%2F2011%2F02%2Ffacebook-2.html&title=Facebookページをアップグレードしてみた"
+			  onclick="window.open(this.href, 'pocket_window', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;">
+			  <i class="fa fa-chevron-down fa-lg"></i></a>
+		  </li>
+		</ul>
+	</header>
+	<div class="entry-content">
+		
+			<p>FacebookファンページがFacebookページに名称が変更されて<br>１週間ほど立ちましたが、今日見るとさらにアップグレード機能が追加されていました。<br>以下、アップグレードしてみた結果をまとめました。</p>
+			
+				<p class="article-more-link">
+					<a href="/2011/02/facebook-2.html#more">Read More</a>
+				</p>
+      
+    
+	</div>
+	<footer class="entry-footer">
+		
+		<div class="entry-meta-footer">
+			<span class="category">
+				
+			</span>
+			<span class="tags">
+				
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Facebook/" rel="tag">Facebook,</a></li></ul>
+
+			</span>
+		</div>
+	</footer>
+	
+</article>
+
+
+	<hr class="article-devider">
+
+
+
+
+  
+    <article id="post-blog-post-25" class="post">
+	<footer class="entry-meta-header">
+		<span class="meta-elements date">
+			<a href="/2011/02/blog-post-25.html" class="article-date">
+  <time datetime="2011-02-08T17:35:00.000Z" itemprop="datePublished">2011-02-09</time>
+</a>
+		</span>
+		<span class="meta-elements author">bornknow108</span>
+		<div class="commentscount">
+			
+		</div>
+	</footer>
+	
+	<header class="entry-header">
+		
+			
+  
+    <h1 itemprop="name" class="entry-title">
+      <a class="article-title" href="/2011/02/blog-post-25.html">波ダッシュ と 波線</a>
+    </h1>
+  
+
+		
+		<ul class="sns-share--area">
+		  <li>
+			<a href="http://b.hatena.ne.jp/entry/http://bornknow.com/2011/02/blog-post-25.html"
+			  class="hatena-bookmark-button sns-share--bookmark sns-share--link"
+			  data-hatena-bookmark-title=""
+			  data-hatena-bookmark-layout="simple"
+			  title="このエントリーをはてなブックマークに追加">
+			  <i class="fa fa-bookmark fa-lg"></i></a>
+		  </li>
+		  <li>
+			<a class="sns-share--twitter sns-share--link"
+			  href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fbornknow.com%2F2011%2F02%2Fblog-post-25.html&text=波ダッシュ と 波線" target="_blank">
+			  <i class="fa fa-twitter fa-lg" ></i></a>
+		  </li>
+		  <li>
+			<a class="sns-share--facebook sns-share--link"
+			  href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fbornknow.com%2F2011%2F02%2Fblog-post-25.html"
+			  onclick="window.open(this.href, 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;"
+			  target="_blank">
+			  <i class="fa fa-facebook fa-lg" ></i></a>
+		  </li>
+		  <li>
+			<a class="sns-share--pocket sns-share--link"
+			  href="http://getpocket.com/edit?url=http%3A%2F%2Fbornknow.com%2F2011%2F02%2Fblog-post-25.html&title=波ダッシュ と 波線"
+			  onclick="window.open(this.href, 'pocket_window', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;">
+			  <i class="fa fa-chevron-down fa-lg"></i></a>
+		  </li>
+		</ul>
+	</header>
+	<div class="entry-content">
+		
+    	<p>よく度忘れするので、メモ。</p>
+<p>Macで普通に入力した波線は、Windowsでは波ダッシュで表示される。<br>簡単に、共通化するためには、文字参照を使う。<br>波線 <code>&amp;#xFF5E;</code><br>波ダッシュ <code>&amp;#12316;</code></p>
+
+    
+	</div>
+	<footer class="entry-footer">
+		
+		<div class="entry-meta-footer">
+			<span class="category">
+				
+			</span>
+			<span class="tags">
+				
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%81%A9%E5%BF%98%E3%82%8C-HTML/" rel="tag">ど忘れ, HTML,</a></li></ul>
+
+			</span>
+		</div>
+	</footer>
+	
+</article>
+
+
+	<hr class="article-devider">
+
+
+
+
+  
+    <article id="post-fliezilla-mac" class="post">
+	<footer class="entry-meta-header">
+		<span class="meta-elements date">
+			<a href="/2011/02/fliezilla-mac.html" class="article-date">
+  <time datetime="2011-02-07T01:37:00.003Z" itemprop="datePublished">2011-02-07</time>
+</a>
+		</span>
+		<span class="meta-elements author">bornknow108</span>
+		<div class="commentscount">
+			
+		</div>
+	</footer>
+	
+	<header class="entry-header">
+		
+			
+  
+    <h1 itemprop="name" class="entry-title">
+      <a class="article-title" href="/2011/02/fliezilla-mac.html">FlieZilla と Mac でポートフォワード（トンネル）する方法</a>
+    </h1>
+  
+
+		
+		<ul class="sns-share--area">
+		  <li>
+			<a href="http://b.hatena.ne.jp/entry/http://bornknow.com/2011/02/fliezilla-mac.html"
+			  class="hatena-bookmark-button sns-share--bookmark sns-share--link"
+			  data-hatena-bookmark-title=""
+			  data-hatena-bookmark-layout="simple"
+			  title="このエントリーをはてなブックマークに追加">
+			  <i class="fa fa-bookmark fa-lg"></i></a>
+		  </li>
+		  <li>
+			<a class="sns-share--twitter sns-share--link"
+			  href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fbornknow.com%2F2011%2F02%2Ffliezilla-mac.html&text=FlieZilla と Mac でポートフォワード（トンネル）する方法" target="_blank">
+			  <i class="fa fa-twitter fa-lg" ></i></a>
+		  </li>
+		  <li>
+			<a class="sns-share--facebook sns-share--link"
+			  href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fbornknow.com%2F2011%2F02%2Ffliezilla-mac.html"
+			  onclick="window.open(this.href, 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;"
+			  target="_blank">
+			  <i class="fa fa-facebook fa-lg" ></i></a>
+		  </li>
+		  <li>
+			<a class="sns-share--pocket sns-share--link"
+			  href="http://getpocket.com/edit?url=http%3A%2F%2Fbornknow.com%2F2011%2F02%2Ffliezilla-mac.html&title=FlieZilla と Mac でポートフォワード（トンネル）する方法"
+			  onclick="window.open(this.href, 'pocket_window', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;">
+			  <i class="fa fa-chevron-down fa-lg"></i></a>
+		  </li>
+		</ul>
+	</header>
+	<div class="entry-content">
+		
+			<p>Mac でポートフォワード（トンネル）を使う必要があったので<br>調べた結果をメモっておきます。<br>Windows だったら <a href="http://winscp.net/eng/docs/lang:jp" target="_blank" rel="noopener">WinSCP</a> でサックリいけるけど、<br>Mac では  そういったツールはないようです。<br>（おすすめのツールあれば教えてください。）</p>
+<p>Mac でのポートフォワードの手順はだいたい下のような感じです。<br>##1. ターミナルを起動する</p>
+<p>##2. コマンドを叩く</p>
+<p>いろいろ探し回ったら、下のような感じで入力するって書いてありました。<br>
+			
+				<p class="article-more-link">
+					<a href="/2011/02/fliezilla-mac.html#more">Read More</a>
+				</p>
+      
+    
+	</div>
+	<footer class="entry-footer">
+		
+		<div class="entry-meta-footer">
+			<span class="category">
+				
+			</span>
+			<span class="tags">
+				
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC-Mac-%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89/" rel="tag">サーバー, Mac, コマンド,</a></li></ul>
+
+			</span>
+		</div>
+	</footer>
+	
+</article>
+
+
+	<hr class="article-devider">
+
+
+
+
+  
+    <article id="post-iphone-1" class="post">
+	<footer class="entry-meta-header">
+		<span class="meta-elements date">
+			<a href="/2011/02/iphone-1.html" class="article-date">
+  <time datetime="2011-02-04T00:12:00.001Z" itemprop="datePublished">2011-02-04</time>
+</a>
+		</span>
+		<span class="meta-elements author">bornknow108</span>
+		<div class="commentscount">
+			
+		</div>
+	</footer>
+	
+	<header class="entry-header">
+		
+			
+  
+    <h1 itemprop="name" class="entry-title">
+      <a class="article-title" href="/2011/02/iphone-1.html">iPhoneのパスワード入力っぽいのを使ってみたい。</a>
+    </h1>
+  
+
+		
+		<ul class="sns-share--area">
+		  <li>
+			<a href="http://b.hatena.ne.jp/entry/http://bornknow.com/2011/02/iphone-1.html"
+			  class="hatena-bookmark-button sns-share--bookmark sns-share--link"
+			  data-hatena-bookmark-title=""
+			  data-hatena-bookmark-layout="simple"
+			  title="このエントリーをはてなブックマークに追加">
+			  <i class="fa fa-bookmark fa-lg"></i></a>
+		  </li>
+		  <li>
+			<a class="sns-share--twitter sns-share--link"
+			  href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fbornknow.com%2F2011%2F02%2Fiphone-1.html&text=iPhoneのパスワード入力っぽいのを使ってみたい。" target="_blank">
+			  <i class="fa fa-twitter fa-lg" ></i></a>
+		  </li>
+		  <li>
+			<a class="sns-share--facebook sns-share--link"
+			  href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fbornknow.com%2F2011%2F02%2Fiphone-1.html"
+			  onclick="window.open(this.href, 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;"
+			  target="_blank">
+			  <i class="fa fa-facebook fa-lg" ></i></a>
+		  </li>
+		  <li>
+			<a class="sns-share--pocket sns-share--link"
+			  href="http://getpocket.com/edit?url=http%3A%2F%2Fbornknow.com%2F2011%2F02%2Fiphone-1.html&title=iPhoneのパスワード入力っぽいのを使ってみたい。"
+			  onclick="window.open(this.href, 'pocket_window', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;">
+			  <i class="fa fa-chevron-down fa-lg"></i></a>
+		  </li>
+		</ul>
+	</header>
+	<div class="entry-content">
+		
+			<p>パスワード入力時に、iPhoneみたいに遅れてマスクされる奴を<br>PCでも使ってみたい時ってありませんか？<br>●●●●●●a<br>が<br>●●●●●●●<br>みたいになる奴です</p>
+			
+				<p class="article-more-link">
+					<a href="/2011/02/iphone-1.html#more">Read More</a>
+				</p>
+      
+    
+	</div>
+	<footer class="entry-footer">
+		
+		<div class="entry-meta-footer">
+			<span class="category">
+				
+			</span>
+			<span class="tags">
+				
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript,</a></li></ul>
+
+			</span>
+		</div>
+	</footer>
+	
+</article>
+
+
+	<hr class="article-devider">
+
+
+
+
+  
+
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/4/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/6/">Next &amp;raquo;</a>
+    </nav>
+  
+
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- article -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-2875874165633260"
+         data-ad-slot="8347318920"
+         data-ad-format="auto"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+
+
+
+    </div>
+    <div class="mb-search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="Search">
+    <input type="hidden" name="q" value="site:bornknow.com">
+  </form>
+</div>
+<footer id="footer">
+	<h1 class="footer-blog-title">
+		<a href="/">骨折り損のくたびれ儲け</a>
+	</h1>
+	<span class="copyright">
+		&copy; 2020 bornknow108<br>
+		Modify from <a href="http://sanographix.github.io/tumblr/apollo/" target="_blank">Apollo</a> theme, designed by <a href="http://www.sanographix.net/" target="_blank">SANOGRAPHIX.NET</a><br>
+		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+	</span>
+</footer>
+
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Google plus APIをさわってみた。 | 骨折り損のくたびれ儲け</title>
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="まずは、https:&#x2F;&#x2F;code.google.com&#x2F;apis&#x2F;console&#x2F; にアクセスします。 左のメニューから「Service」を選択すると、ずらずらっとAPIの一覧が 表示されるので、そのなかから、「Google+ API」をONにします。  私は、今のところ1,000アクセス&#x2F;日となってました。 (ユーザーによって異なるのかは知らないですが)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Google plus APIをさわってみた。">
+<meta property="og:url" content="http://bornknow.com/2011/09/google-api.html">
+<meta property="og:site_name" content="骨折り損のくたびれ儲け">
+<meta property="og:description" content="まずは、https:&#x2F;&#x2F;code.google.com&#x2F;apis&#x2F;console&#x2F; にアクセスします。 左のメニューから「Service」を選択すると、ずらずらっとAPIの一覧が 表示されるので、そのなかから、「Google+ API」をONにします。  私は、今のところ1,000アクセス&#x2F;日となってました。 (ユーザーによって異なるのかは知らないですが)">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="http://3.bp.blogspot.com/-Smqdkr0JEC4/TnLK5qCt2HI/AAAAAAAAAHc/DN2qzwCg_1U/s320/Google+APIs+Console-5.jpg">
+<meta property="og:image" content="http://3.bp.blogspot.com/-LOo3g2N0pJ4/TnLK583BFpI/AAAAAAAAAHg/YwtVyl_WTdk/s320/Google+APIs+Console-6.jpg">
+<meta property="og:image" content="http://1.bp.blogspot.com/-iC7SnGKOlVQ/TnLOPUfyjpI/AAAAAAAAAHs/RMx1dENT_ag/s320/Eigoro+Yamamura+-+Google%252B.jpg">
+<meta property="og:image" content="http://1.bp.blogspot.com/-cobO42-bdX0/TnLK6duotFI/AAAAAAAAAHk/ac6kN28Gf9E/s320/Google+APIs+Console.jpg">
+<meta property="og:image" content="http://1.bp.blogspot.com/-ZtFjfwPZ1qw/TnLK36GV0gI/AAAAAAAAAHM/_soxvZFRIIk/s320/Google+APIs+Console-1.jpg">
+<meta property="og:image" content="http://1.bp.blogspot.com/-QmHYX9dDpL4/TnLK4o5C0LI/AAAAAAAAAHU/6O0p6F91aQU/s320/Google+APIs+Console-3.jpg">
+<meta property="og:image" content="http://1.bp.blogspot.com/-IsOKGMlXCoA/TnLK5MASOUI/AAAAAAAAAHY/CDXjbO40rXs/s320/Google+APIs+Console-4.jpg">
+<meta property="og:image" content="http://4.bp.blogspot.com/-am-cJZ7Fjkk/TnLK3jjAyZI/AAAAAAAAAHI/NU-Vm9wUpLQ/s320/Downloads+-+Google%252B+Platform+%25E2%2580%2594+Google+Developers.jpg">
+<meta property="article:published_time" content="2011-09-15T19:37:00.000Z">
+<meta property="article:modified_time" content="2020-05-10T09:41:21.236Z">
+<meta property="article:author" content="bornknow108">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://3.bp.blogspot.com/-Smqdkr0JEC4/TnLK5qCt2HI/AAAAAAAAAHc/DN2qzwCg_1U/s320/Google+APIs+Console-5.jpg">
+<meta name="twitter:creator" content="@bornknow108">
+<link rel="publisher" href="bornknow108">
+<meta property="fb:app_id" content="1441275542864270">
+  
+    <link rel="alternative" href="/atom.xml" title="骨折り損のくたびれ儲け" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-6062369-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+<body>
+  <div id="container">
+    <div class="mobile-nav-panel">
+	<i class="icon-reorder icon-large"></i>
+</div>
+<header id="header">
+	<div class="clearfix">
+		<h1 class="blog-title">
+			<a href="/">骨折り損のくたびれ儲け</a>
+		</h1>
+		<nav class="nav">
+			<ul>
+				<li><a href="/">Home</a></li><li><a href="/archives">Archives</a></li>
+				<li><a id="nav-search-btn" class="nav-icon" title="Search"></a></li>
+				<li><a href="/atom.xml" id="nav-rss-link" class="nav-icon" title="RSS Feed"></a></li>
+			</ul>
+		</nav>
+		<div id="search-form-wrap">
+			<form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://bornknow.com"></form>
+		</div>
+	</div>
+</header>
+
+    <div id="main">
+      <article id="post-google-api" class="post">
+	<footer class="entry-meta-header">
+		<span class="meta-elements date">
+			<a href="/2011/09/google-api.html" class="article-date">
+  <time datetime="2011-09-15T19:37:00.000Z" itemprop="datePublished">2011-09-16</time>
+</a>
+		</span>
+		<span class="meta-elements author">bornknow108</span>
+		<div class="commentscount">
+			
+		</div>
+	</footer>
+	
+	<header class="entry-header">
+		
+			
+  
+    <h1 class="article-title entry-title" itemprop="name">
+      Google plus APIをさわってみた。
+    </h1>
+  
+
+		
+		<ul class="sns-share--area">
+		  <li>
+			<a href="http://b.hatena.ne.jp/entry/http://bornknow.com/2011/09/google-api.html"
+			  class="hatena-bookmark-button sns-share--bookmark sns-share--link"
+			  data-hatena-bookmark-title="Google plus APIをさわってみた。"
+			  data-hatena-bookmark-layout="simple"
+			  title="このエントリーをはてなブックマークに追加">
+			  <i class="fa fa-bookmark fa-lg"></i></a>
+		  </li>
+		  <li>
+			<a class="sns-share--twitter sns-share--link"
+			  href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fbornknow.com%2F2011%2F09%2Fgoogle-api.html&text=Google plus APIをさわってみた。" target="_blank">
+			  <i class="fa fa-twitter fa-lg" ></i></a>
+		  </li>
+		  <li>
+			<a class="sns-share--facebook sns-share--link"
+			  href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fbornknow.com%2F2011%2F09%2Fgoogle-api.html"
+			  onclick="window.open(this.href, 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;"
+			  target="_blank">
+			  <i class="fa fa-facebook fa-lg" ></i></a>
+		  </li>
+		  <li>
+			<a class="sns-share--pocket sns-share--link"
+			  href="http://getpocket.com/edit?url=http%3A%2F%2Fbornknow.com%2F2011%2F09%2Fgoogle-api.html&title=Google plus APIをさわってみた。"
+			  onclick="window.open(this.href, 'pocket_window', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;">
+			  <i class="fa fa-chevron-down fa-lg"></i></a>
+		  </li>
+		</ul>
+	</header>
+	<div class="entry-content">
+		
+    	<p>まずは、<a href="https://code.google.com/apis/console/" target="_blank" rel="noopener">https://code.google.com/apis/console/</a> にアクセスします。</p>
+<p>左のメニューから「Service」を選択すると、ずらずらっとAPIの一覧が</p>
+<p>表示されるので、そのなかから、「Google+ API」をONにします。</p>
+<p><a href="http://3.bp.blogspot.com/-Smqdkr0JEC4/TnLK5qCt2HI/AAAAAAAAAHc/DN2qzwCg_1U/s1600/Google+APIs+Console-5.jpg" target="_blank" rel="noopener" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="126" src="http://3.bp.blogspot.com/-Smqdkr0JEC4/TnLK5qCt2HI/AAAAAAAAAHc/DN2qzwCg_1U/s320/Google+APIs+Console-5.jpg" width="320" /></a></p>
+<p>私は、今のところ1,000アクセス/日となってました。</p>
+<p>(ユーザーによって異なるのかは知らないですが)</p>
+ <a id="more"></a>
+
+
+<p>「Google+ API」をONにすると、左のメニューの「API Access」に「Simple API Access」という情報が表示されます。ここに表示された、API keyを使って、Google+ APIにアクセスします。</p>
+<p><a href="http://3.bp.blogspot.com/-LOo3g2N0pJ4/TnLK583BFpI/AAAAAAAAAHg/YwtVyl_WTdk/s1600/Google+APIs+Console-6.jpg" target="_blank" rel="noopener" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="78" src="http://3.bp.blogspot.com/-LOo3g2N0pJ4/TnLK583BFpI/AAAAAAAAAHg/YwtVyl_WTdk/s320/Google+APIs+Console-6.jpg" width="320" /></a></p>
+<p>プロフィールを取得する場合</p>
+<p><a href="https://www.googleapis.com/plus/v1/people/{ユーザーのID}?key={API" target="_blank" rel="noopener">https://www.googleapis.com/plus/v1/people/{ユーザーのID}?key={API</a> key}</p>
+<p>ユーザーIDは、プロフィールのURLをみればわかるやつです。</p>
+<p>下の画像の赤線のところです。</p>
+<p><a href="http://1.bp.blogspot.com/-iC7SnGKOlVQ/TnLOPUfyjpI/AAAAAAAAAHs/RMx1dENT_ag/s1600/Eigoro+Yamamura+-+Google%252B.jpg" target="_blank" rel="noopener" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="141" src="http://1.bp.blogspot.com/-iC7SnGKOlVQ/TnLOPUfyjpI/AAAAAAAAAHs/RMx1dENT_ag/s320/Eigoro+Yamamura+-+Google%252B.jpg" width="320" /></a></p>
+<p>投稿内容を取得する場合</p>
+<p><a href="https://www.googleapis.com/plus/v1/people/{ユーザーのID}/activities/public?alt=json&amp;key={API" target="_blank" rel="noopener">https://www.googleapis.com/plus/v1/people/{ユーザーのID}/activities/public?alt=json&amp;key={API</a> key}</p>
+<p>投稿の詳細を取得する場合</p>
+<p><a href="https://www.googleapis.com/plus/v1/activities/{投稿のID}?key={API" target="_blank" rel="noopener">https://www.googleapis.com/plus/v1/activities/{投稿のID}?key={API</a> key}</p>
+<p>投稿のIDは投稿内容を取得することで、確認することができます。</p>
+<p>これらAPIを使うときに、’URLの最後にスラッシュがあるとエラーになる’</p>
+<p>ので気をつけてください。</p>
+<p>これはOKで</p>
+<p><a href="https://www.googleapis.com/plus/v1/people/{ユーザーのID}/activities/public?alt=json&amp;key={API" target="_blank" rel="noopener">https://www.googleapis.com/plus/v1/people/{ユーザーのID}/activities/public?alt=json&amp;key={API</a> key}</p>
+<p>これはNGです。</p>
+<p><a href="https://www.googleapis.com/plus/v1/people/{ユーザーのID}/activities/public&#39;**/" target="_blank" rel="noopener">https://www.googleapis.com/plus/v1/people/{ユーザーのID}/activities/public&#39;**/</a></b>‘?alt=json&amp;key={API key}</p>
+<p>「Not Found」って表示されて、なんでなん！？ってなりました。</p>
+<p>私はこれでプチはまりしました。</p>
+<p>あと、OAuth2.0を使ってアクセスする場合は、下のような感じです。</p>
+<p>左のメニューの「API Access」をクリックして表示されたページの</p>
+<p>「Create an OAuth2.0 Client ID」をクリックします。</p>
+<p><a href="http://1.bp.blogspot.com/-cobO42-bdX0/TnLK6duotFI/AAAAAAAAAHk/ac6kN28Gf9E/s1600/Google+APIs+Console.jpg" target="_blank" rel="noopener" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="172" src="http://1.bp.blogspot.com/-cobO42-bdX0/TnLK6duotFI/AAAAAAAAAHk/ac6kN28Gf9E/s320/Google+APIs+Console.jpg" width="320" /></a></p>
+<p>すると、以下のようなフォームが表示されるので、プロジェクト名と</p>
+<p>プロジェクトのロゴ(任意)を入力します。</p>
+<p><a href="http://1.bp.blogspot.com/-ZtFjfwPZ1qw/TnLK36GV0gI/AAAAAAAAAHM/_soxvZFRIIk/s1600/Google+APIs+Console-1.jpg" target="_blank" rel="noopener" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="244" src="http://1.bp.blogspot.com/-ZtFjfwPZ1qw/TnLK36GV0gI/AAAAAAAAAHM/_soxvZFRIIk/s320/Google+APIs+Console-1.jpg" width="320" /></a></p>
+<p>つづいて、アプリケーションの詳細を設定します。</p>
+<p><a href="http://1.bp.blogspot.com/-QmHYX9dDpL4/TnLK4o5C0LI/AAAAAAAAAHU/6O0p6F91aQU/s1600/Google+APIs+Console-3.jpg" target="_blank" rel="noopener" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="259" src="http://1.bp.blogspot.com/-QmHYX9dDpL4/TnLK4o5C0LI/AAAAAAAAAHU/6O0p6F91aQU/s320/Google+APIs+Console-3.jpg" width="320" /></a></p>
+<p>設定が完了すると、以下のようにAPI Access用の情報が作成されます。</p>
+<p><a href="http://1.bp.blogspot.com/-IsOKGMlXCoA/TnLK5MASOUI/AAAAAAAAAHY/CDXjbO40rXs/s1600/Google+APIs+Console-4.jpg" target="_blank" rel="noopener" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="219" src="http://1.bp.blogspot.com/-IsOKGMlXCoA/TnLK5MASOUI/AAAAAAAAAHY/CDXjbO40rXs/s320/Google+APIs+Console-4.jpg" width="320" /></a></p>
+<p>あとは、自分の使いたい言語のClient Libralyをダウンロードして</p>
+<p>実装します。</p>
+<p><a href="http://4.bp.blogspot.com/-am-cJZ7Fjkk/TnLK3jjAyZI/AAAAAAAAAHI/NU-Vm9wUpLQ/s1600/Downloads+-+Google%252B+Platform+%25E2%2580%2594+Google+Developers.jpg" target="_blank" rel="noopener" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="222" src="http://4.bp.blogspot.com/-am-cJZ7Fjkk/TnLK3jjAyZI/AAAAAAAAAHI/NU-Vm9wUpLQ/s320/Downloads+-+Google%252B+Platform+%25E2%2580%2594+Google+Developers.jpg" width="320" /></a></p>
+<p>Starter Projectを見れば、現状できることがどんなことかは、</p>
+<p>わかるようになってると思います。(とりあえずPHPで試してみました。)</p>
+<p>OAuthを使う場合も、「Service」の「Google+ API」をONにしておかないと</p>
+<p>エラーが発生するので気をつけてください。</p>
+<p>APIに関しては、現状まだまだ物足りない気がしますが、<br>今後を期待しておこうと思います。</p>
+
+    
+	</div>
+	<footer class="entry-footer">
+		
+			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<!-- article -->
+			<ins class="adsbygoogle"
+			     style="display:block"
+			     data-ad-client="ca-pub-2875874165633260"
+			     data-ad-slot="8347318920"
+			     data-ad-format="auto"></ins>
+			<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+		
+		<div class="entry-meta-footer">
+			<span class="category">
+				
+			</span>
+			<span class="tags">
+				
+			</span>
+		</div>
+	</footer>
+	
+    
+<nav id="article-nav">
+  
+    <a href="/2011/10/dartmac.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Dartの開発環境を作ってみる(Mac版)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2011/09/gdd2011-devquiz.html" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">
+        
+          GDD2011 DevQuiz 頑張ってみた
+        
+      </div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+    </div>
+    <div class="mb-search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="Search">
+    <input type="hidden" name="q" value="site:bornknow.com">
+  </form>
+</div>
+<footer id="footer">
+	<h1 class="footer-blog-title">
+		<a href="/">骨折り損のくたびれ儲け</a>
+	</h1>
+	<span class="copyright">
+		&copy; 2020 bornknow108<br>
+		Modify from <a href="http://sanographix.github.io/tumblr/apollo/" target="_blank">Apollo</a> theme, designed by <a href="http://www.sanographix.net/" target="_blank">SANOGRAPHIX.NET</a><br>
+		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+	</span>
+</footer>
+
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

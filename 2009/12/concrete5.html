@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>concrete5に公開日のバグ発見？ | 骨折り損のくたびれ儲け</title>
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="いま、concrete5が熱いです。（個人的に）**concrete5とは  普段、ホームページを作る時は、専用ソフトを購入してサイトを作り、アップロード等を行う必要がありました。concrete5は、それらのプロセスを省略し、ホームページ上で、すべてを直感的に編集できるようにというコンセプトで生まれた、画期的なオープンソースCMSです。コンクリートブロックを積み上げるようにサイトを制作して行ける">
+<meta property="og:type" content="article">
+<meta property="og:title" content="concrete5に公開日のバグ発見？">
+<meta property="og:url" content="http://bornknow.com/2009/12/concrete5.html">
+<meta property="og:site_name" content="骨折り損のくたびれ儲け">
+<meta property="og:description" content="いま、concrete5が熱いです。（個人的に）**concrete5とは  普段、ホームページを作る時は、専用ソフトを購入してサイトを作り、アップロード等を行う必要がありました。concrete5は、それらのプロセスを省略し、ホームページ上で、すべてを直感的に編集できるようにというコンセプトで生まれた、画期的なオープンソースCMSです。コンクリートブロックを積み上げるようにサイトを制作して行ける">
+<meta property="og:locale" content="ja_JP">
+<meta property="article:published_time" content="2009-12-01T23:52:00.013Z">
+<meta property="article:modified_time" content="2020-05-10T09:41:21.233Z">
+<meta property="article:author" content="bornknow108">
+<meta property="article:tag" content="concrete5,">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator" content="@bornknow108">
+<link rel="publisher" href="bornknow108">
+<meta property="fb:app_id" content="1441275542864270">
+  
+    <link rel="alternative" href="/atom.xml" title="骨折り損のくたびれ儲け" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-6062369-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+<body>
+  <div id="container">
+    <div class="mobile-nav-panel">
+	<i class="icon-reorder icon-large"></i>
+</div>
+<header id="header">
+	<div class="clearfix">
+		<h1 class="blog-title">
+			<a href="/">骨折り損のくたびれ儲け</a>
+		</h1>
+		<nav class="nav">
+			<ul>
+				<li><a href="/">Home</a></li><li><a href="/archives">Archives</a></li>
+				<li><a id="nav-search-btn" class="nav-icon" title="Search"></a></li>
+				<li><a href="/atom.xml" id="nav-rss-link" class="nav-icon" title="RSS Feed"></a></li>
+			</ul>
+		</nav>
+		<div id="search-form-wrap">
+			<form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://bornknow.com"></form>
+		</div>
+	</div>
+</header>
+
+    <div id="main">
+      <article id="post-concrete5" class="post">
+	<footer class="entry-meta-header">
+		<span class="meta-elements date">
+			<a href="/2009/12/concrete5.html" class="article-date">
+  <time datetime="2009-12-01T23:52:00.013Z" itemprop="datePublished">2009-12-02</time>
+</a>
+		</span>
+		<span class="meta-elements author">bornknow108</span>
+		<div class="commentscount">
+			
+		</div>
+	</footer>
+	
+	<header class="entry-header">
+		
+			
+  
+    <h1 class="article-title entry-title" itemprop="name">
+      concrete5に公開日のバグ発見？
+    </h1>
+  
+
+		
+		<ul class="sns-share--area">
+		  <li>
+			<a href="http://b.hatena.ne.jp/entry/http://bornknow.com/2009/12/concrete5.html"
+			  class="hatena-bookmark-button sns-share--bookmark sns-share--link"
+			  data-hatena-bookmark-title="concrete5に公開日のバグ発見？"
+			  data-hatena-bookmark-layout="simple"
+			  title="このエントリーをはてなブックマークに追加">
+			  <i class="fa fa-bookmark fa-lg"></i></a>
+		  </li>
+		  <li>
+			<a class="sns-share--twitter sns-share--link"
+			  href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fbornknow.com%2F2009%2F12%2Fconcrete5.html&text=concrete5に公開日のバグ発見？" target="_blank">
+			  <i class="fa fa-twitter fa-lg" ></i></a>
+		  </li>
+		  <li>
+			<a class="sns-share--facebook sns-share--link"
+			  href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fbornknow.com%2F2009%2F12%2Fconcrete5.html"
+			  onclick="window.open(this.href, 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;"
+			  target="_blank">
+			  <i class="fa fa-facebook fa-lg" ></i></a>
+		  </li>
+		  <li>
+			<a class="sns-share--pocket sns-share--link"
+			  href="http://getpocket.com/edit?url=http%3A%2F%2Fbornknow.com%2F2009%2F12%2Fconcrete5.html&title=concrete5に公開日のバグ発見？"
+			  onclick="window.open(this.href, 'pocket_window', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;">
+			  <i class="fa fa-chevron-down fa-lg"></i></a>
+		  </li>
+		</ul>
+	</header>
+	<div class="entry-content">
+		
+    	<p>いま、<a href="http://concrete5-japan.org/" target="_blank" rel="noopener">concrete5</a>が熱いです。（個人的に）<br>**concrete5とは</b></p>
+<blockquote>
+<p>普段、ホームページを作る時は、専用ソフトを購入してサイトを作り、アップロード等を行う必要がありました。<br>concrete5は、それらのプロセスを省略し、ホームページ上で、すべてを直感的に編集できるようにというコンセプトで生まれた、画期的なオープンソースCMSです。<br>コンクリートブロックを積み上げるようにサイトを制作して行けるようにというコンセプトの元に開発されました。また、複数人でも運用出来るような工夫がしてあります。<br>開発は、アメリカ・オレゴン州ポートランドのConcrete CMS, inc.が行っています。<br>「concrete5」はConcrete CMS, incの登録商標で、すべて英小文字で表記します。<br><strong>concrete5日本語公式サイトより引用</strong></p>
+</blockquote>
+<p>PHPがわかれば、いろいろと改造が簡単にできそうでとても楽しいです。<br>今は、パッケージの作成を確認＆勉強中。<br>とりあえず作ってみたSinglePageその１<br>ファイル一覧表<br><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://1.bp.blogspot.com/_1DT3KqJm8Ng/SxYtB4C5q4I/AAAAAAAAAAM/tIM8l_PAe9s/s1600-h/1.jpg" target="_blank" rel="noopener">&lt;img style=”display:block; margin:0px auto 10px; text-align:center;cursor:pointer; cursor:hand;width: 320px; height: 188px;” src=”http://1.bp.blogspot.com/_1DT3KqJm8Ng/SxYtB4C5q4I/AAAAAAAAAAM/tIM8l_PAe9s/s320/1.jpg” border=”0” alt=””id=”BLOGGER_PHOTO_ID_5410561512579902338” /&gt;</a><br>とりあえず作ってみたSinglePageその１<br>設定値一覧表<br><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://3.bp.blogspot.com/_1DT3KqJm8Ng/SxYtVl8g1OI/AAAAAAAAAAU/EzkKp7HG98Q/s1600-h/2.jpg" target="_blank" rel="noopener">&lt;img style=”display:block; margin:0px auto 10px; text-align:center;cursor:pointer; cursor:hand;width: 320px; height: 264px;” src=”http://3.bp.blogspot.com/_1DT3KqJm8Ng/SxYtVl8g1OI/AAAAAAAAAAU/EzkKp7HG98Q/s320/2.jpg” border=”0” alt=””id=”BLOGGER_PHOTO_ID_5410561851318654178” /&gt;</a><br>で、標題の発見したバグは下のような感じです。<br>もともと、公開日設定が権限管理の表示上初期化されているのを不審に思いながら、<br>ファイル一覧を作っている最中にバグっぽいのを発見したので開発者への連絡をどうしたらいいのかわからなかったので、備忘録代わりに残しておきます。</p>
+<p>concrete5.3.3.1 日本語版</p>
+<p>/concrete/models/groups.php (407行)付近</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function getGroupStartDate($type &#x3D; &#39;system&#39;) &#123;</span><br><span class="line">    if(ENABLE_USER_TIMEZONES &amp;&amp; $type &#x3D;&#x3D; &#39;user&#39;) &#123;</span><br><span class="line">        $dh &#x3D; Loader::helper(&#39;date&#39;);</span><br><span class="line">        return $dh-&gt;getLocalDateTime($this-&gt;cgStartDate);</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        &#x2F;&#x2F; StartDate取得なのにEndDateを取得しちゃってる</span><br><span class="line">        &#x2F;&#x2F;  return $this-&gt;cgEndDate;</span><br><span class="line">        return $this-&gt;cgStartDate;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p> Usagi Projectのメンバー方が見てくれることを祈ってます。</p>
+
+    
+	</div>
+	<footer class="entry-footer">
+		
+			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<!-- article -->
+			<ins class="adsbygoogle"
+			     style="display:block"
+			     data-ad-client="ca-pub-2875874165633260"
+			     data-ad-slot="8347318920"
+			     data-ad-format="auto"></ins>
+			<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+		
+		<div class="entry-meta-footer">
+			<span class="category">
+				
+			</span>
+			<span class="tags">
+				
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/concrete5/" rel="tag">concrete5,</a></li></ul>
+
+			</span>
+		</div>
+	</footer>
+	
+    
+<nav id="article-nav">
+  
+    <a href="/2009/12/concrete5-04.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          concrete5  編集履歴の日付フォーマットが気に入らない
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2009/10/zendframework.html" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">
+        
+          ZendFrameworkで携帯 文字化け対応
+        
+      </div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+    </div>
+    <div class="mb-search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="Search">
+    <input type="hidden" name="q" value="site:bornknow.com">
+  </form>
+</div>
+<footer id="footer">
+	<h1 class="footer-blog-title">
+		<a href="/">骨折り損のくたびれ儲け</a>
+	</h1>
+	<span class="copyright">
+		&copy; 2020 bornknow108<br>
+		Modify from <a href="http://sanographix.github.io/tumblr/apollo/" target="_blank">Apollo</a> theme, designed by <a href="http://www.sanographix.net/" target="_blank">SANOGRAPHIX.NET</a><br>
+		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+	</span>
+</footer>
+
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
