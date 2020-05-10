@@ -189,6 +189,9 @@ h5 a:hover,
 h6 a:hover {
   color: #222;
 }
+h1.archive-title {
+  font-size: 22px;
+}
 pre,
 code {
   font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace;
